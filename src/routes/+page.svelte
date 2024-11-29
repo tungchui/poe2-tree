@@ -33,6 +33,14 @@
 	let searchTerm = '';
 	let searchResults: string[] = [];
 
+	// State for selected nodes
+	let selectedNodes: string[] = [];
+
+	// State for filters
+	let highlightKeystones = true;
+	let highlightNotables = true;
+	let hideUnidentified = true;
+
 	// Reactive statement for search
 	$: handleSearch(searchTerm);
 
@@ -48,7 +56,7 @@
 		tooltipY = nodeY - 20; // Corrected position
 	}
 
-	function handleMousedown(node: NodePosition | null, event: MouseEvent) {
+	function handleContainerMousedown(event: MouseEvent) {
 		event.preventDefault();
 
 		if (event.button === 0) {
@@ -59,11 +67,16 @@
 			isPanning = true;
 			panStartX = event.clientX - panOffsetX;
 			panStartY = event.clientY - panOffsetY;
+		}
+	}
 
-			if (node) {
-				tooltipHold = true;
-				activateTooltip(node);
-			}
+	function toggleNodeSelection(node: NodePosition) {
+		if (selectedNodes.includes(node.id)) {
+			// Deselect node
+			selectedNodes = selectedNodes.filter((id) => id !== node.id);
+		} else {
+			// Select node
+			selectedNodes = [...selectedNodes, node.id];
 		}
 	}
 
@@ -201,12 +214,12 @@
 				<path
 					fill-rule="evenodd"
 					d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
-                    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
-                    0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
-                    0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.65 7.65 0 012 0c1.53-1.04
-                    2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
-                    0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
-                    0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
+					  0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+					  0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+					  0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.65 7.65 0 012 0c1.53-1.04
+					  2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+					  0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+					  0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
 				>
 				</path>
 			</svg>
@@ -215,12 +228,19 @@
 
 	<h1>Path of Exile 2 Skill Tree Preview</h1>
 	<p>Check out the Github repository for how to contribute to this project.</p>
+	<!-- Filters -->
+	<div class="filters">
+		<label><input type="checkbox" bind:checked={highlightKeystones} /> Highlight Keystones</label>
+		<label><input type="checkbox" bind:checked={highlightNotables} /> Highlight Notables</label>
+		<label><input type="checkbox" bind:checked={hideUnidentified} /> Hide Unidentified</label>
+	</div>
 </div>
 
-<!-- Search Section -->
+<!-- Search and Filter Section -->
 <div class="search-bar">
 	<input type="text" placeholder="Search..." bind:value={searchTerm} />
 	<span>Search results: {searchResults.length}</span>
+	<span>Selected Nodes: {selectedNodes.length}</span>
 </div>
 
 <!-- Skill Tree Container -->
@@ -230,18 +250,18 @@
 	class="image-container"
 	role="application"
 	tabindex="-1"
-	onmousedown={(event) => handleMousedown(null, event)}
+	onmousedown={handleContainerMousedown}
 	onwheel={handleWheel}
 >
 	<div
 		class="image-wrapper"
 		style="
-                width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-                height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-                transform: translate({panOffsetX}px, {panOffsetY}px);
-                user-select: none;
-                cursor: {isPanning ? 'grabbing' : 'grab'};
-            "
+				  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+				  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+				  transform: translate({panOffsetX}px, {panOffsetY}px);
+				  user-select: none;
+				  cursor: {isPanning ? 'grabbing' : 'grab'};
+			  "
 	>
 		<img
 			bind:this={imageEl}
@@ -250,35 +270,40 @@
 			alt="Interactive"
 			draggable="false"
 			style="
-                    pointer-events: none;
-                    max-width: none;
-                    width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-                    height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-                "
+					  pointer-events: none;
+					  max-width: none;
+					  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+					  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+				  "
 		/>
 
 		<!-- Display hoverable regions with lighter color -->
 		{#if hasLoaded}
 			{#each ['notables', 'keystones'] as kind}
 				{#each nodes[kind] as node}
-					<!-- svelte-ignore a11y_no_static_element_interactions -->
-					<div
-						class:notable={node.id.startsWith('N')}
-						class:keystone={node.id.startsWith('K')}
-						class:unidentified={nodesDesc[node.id].name === node.id}
-						class:search-result={searchResults.includes(node.id)}
-						style="
-                                width: {baseNodeSize * scale}px;
-                                height: {baseNodeSize * scale}px;
-                                left: {node.x * imageEl!.naturalWidth * scale -
-							(baseNodeSize * scale) / 2}px;
-                                top: {node.y * imageEl!.naturalHeight * scale -
-							(baseNodeSize * scale) / 2}px;
-                            "
-						onmousedown={(event) => handleMousedown(node, event)}
-						onmouseenter={() => handleMouseEnter(node)}
-						onmouseleave={handleMouseLeave}
-					></div>
+					{#if !(hideUnidentified && nodesDesc[node.id].name === node.id)}
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<div
+							class:notable={node.id.startsWith('N')}
+							class:keystone={node.id.startsWith('K')}
+							class:unidentified={nodesDesc[node.id].name === node.id}
+							class:search-result={searchResults.includes(node.id)}
+							class:selected={selectedNodes.includes(node.id)}
+							class:highlighted-keystone={highlightKeystones && node.id.startsWith('K')}
+							class:highlighted-notable={highlightNotables && node.id.startsWith('N')}
+							style="
+								  width: {baseNodeSize * scale}px;
+								  height: {baseNodeSize * scale}px;
+								  left: {node.x * imageEl!.naturalWidth * scale - (baseNodeSize * scale) / 2}px;
+								  top: {node.y * imageEl!.naturalHeight * scale - (baseNodeSize * scale) / 2}px;
+							  "
+							onmousedown={(event) => event.stopPropagation()}
+							onclick={() => toggleNodeSelection(node)}
+							onmouseenter={() => handleMouseEnter(node)}
+							onmouseleave={handleMouseLeave}
+						></div>
+					{/if}
 				{/each}
 			{/each}
 		{/if}
@@ -350,6 +375,19 @@
 		font-size: 16px;
 	}
 
+	.filters {
+		display: inline-block;
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.filters label {
+		margin-right: 10px;
+		font-size: 14px;
+	}
+
 	.image-container {
 		position: relative;
 		display: block;
@@ -386,6 +424,22 @@
 
 	.keystone.unidentified {
 		background-color: rgba(255, 0, 100, 0.2);
+	}
+
+	.notable.selected {
+		background-color: rgba(255, 255, 0, 0.6);
+	}
+
+	.keystone.selected {
+		background-color: rgba(0, 255, 0, 0.6);
+	}
+
+	.highlighted-keystone {
+		border: 2px solid green;
+	}
+
+	.highlighted-notable {
+		border: 2px solid yellow;
 	}
 
 	@keyframes glow {
