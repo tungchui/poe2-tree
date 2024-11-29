@@ -109,9 +109,11 @@
 	{#if tooltipContent != null}
 		<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
 			<div class="title">{tooltipContent.name}</div>
-			{#each tooltipContent.stats as stat}
-				<div class="body">{stat}</div>
-			{/each}
+			<div class="body">
+				{#each tooltipContent.stats as stat}
+					<p class="stat-line">{stat}</p>
+				{/each}
+			</div>
 		</div>
 	{/if}
 </div>
@@ -152,23 +154,27 @@
 
 	.tooltip {
 		position: absolute;
-		background-color: black; /* Dark background */
-		color: white; /* White text */
-		font-family: 'Georgia', serif; /* Classic serif font */
-		border: 2px solid #ffffff; /* White border */
-		padding: 20px;
-		max-width: 400px; /* Limit width */
-		margin: 0 auto; /* Center align */
-		border-radius: 5px; /* Slight rounded corners */
+		min-width: 300px;
+		max-width: 400px;
+		border-radius: 8px;
+		background-color: black; /* Slightly lighter background for the box */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
+		opacity: 0.9;
 
 		/* Title style */
 		.title {
-			font-family: 'Fontin SmallCaps', sans-serif;
-			font-size: 24px;
-			font-weight: bold;
+			font-size: 1.5rem;
+			color: #f0e7e5; /* Light gold for the title text */
 			text-align: center;
-			color: #e4dfd7; /* Golden-like color for title */
-			margin-bottom: 15px; /* Spacing below title */
+			margin-bottom: 15px;
+			background-image: url('./tooltip-header.png'); /* Use the background image */
+			background-size: cover; /* Ensure the image covers the entire title area */
+			background-position: center; /* Center the background image */
+			border-radius: 8px; /* Rounded corners */
+			padding: 10px 0; /* Space inside the title */
+			text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+			display: inline-block; /* Shrinks to fit the content */
+			width: 100%; /* Adjust to content size */
 		}
 
 		/* Body text style */
@@ -178,6 +184,11 @@
 			line-height: 1.5; /* Improve readability */
 			color: #7d7aad; /* Light blue for body text */
 			margin-bottom: 15px; /* Spacing below body */
+			padding: 10px 20px;
+
+			.stat-line {
+				margin: 0 auto;
+			}
 		}
 	}
 </style>
