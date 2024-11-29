@@ -1,48 +1,59 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { type NodePosition, type TooltipContent, loadData } from '$lib';
+	import { onMount } from 'svelte';
 
 	let { positions: nodes, nodesDescription: nodesDesc } = loadData();
 
-	let containerEl: HTMLDivElement | null = $state(null);
-	let imageEl: HTMLImageElement | null = $state(null);
-	let hasLoaded = $state(false);
+	let containerEl: HTMLDivElement | null = null;
+	let imageEl: HTMLImageElement | null = null;
+	let hasLoaded = false;
 
-	let tooltipContent: TooltipContent | null = $state(null);
-	let tooltipHold = $state(false);
-	let tooltipX = $state(0);
-	let tooltipY = $state(0);
+	let tooltipContent: TooltipContent | null = null;
+	let tooltipHold = false;
+	let tooltipX = 0;
+	let tooltipY = 0;
 
-	// New state for panning
-	let isPanning = $state(false);
-	let panStartX = $state(0);
-	let panStartY = $state(0);
-	let panOffsetX = $state(0);
-	let panOffsetY = $state(0);
+	// State for panning
+	let isPanning = false;
+	let panStartX = 0;
+	let panStartY = 0;
+	let panOffsetX = 0;
+	let panOffsetY = 0;
 
-	let searchTerm = $state('');
-	let searchResults: string[] = $state([]);
-	$effect(() => {
-		handleSearch(searchTerm);
-	});
+	// State for zoom
+	let scale = 1; // Initial zoom level
+	const minScale = 0.5; // Minimum zoom out level
+	const maxScale = 3; // Maximum zoom in level
+
+	// State for search
+	let searchTerm = '';
+	let searchResults: string[] = [];
+
+	// Reactive statement for search
+	$: handleSearch(searchTerm);
 
 	function activateTooltip(node: NodePosition) {
 		tooltipContent = nodesDesc[node.id];
 
 		if (!imageEl) return;
 
-		tooltipX = node.x * imageEl.width + 20; // Offset for positioning
-		tooltipY = node.y * imageEl.height - 20;
+		const nodeX = node.x * imageEl!.naturalWidth * scale;
+		const nodeY = node.y * imageEl!.naturalHeight * scale;
+
+		tooltipX = nodeX + 20; // Corrected position
+		tooltipY = nodeY - 20; // Corrected position
 	}
 
 	function handleMousedown(node: NodePosition | null, event: MouseEvent) {
 		// Prevent default image dragging and text selection
+
 		event.preventDefault();
 
 		if (event.button === 0) {
 			// Left mouse button
 			if (containerEl) {
-				containerEl.focus(); // Ensure the container can receive keyboard events
+				containerEl.focus();
 			}
 
 			isPanning = true;
@@ -60,6 +71,7 @@
 		if (isPanning && containerEl) {
 			panOffsetX = event.clientX - panStartX;
 			panOffsetY = event.clientY - panStartY;
+			clampPanOffsets();
 		}
 	}
 
@@ -84,12 +96,44 @@
 	}
 
 	function handleWheel(event: WheelEvent) {
-		// Optional: Add zoom functionality if desired
 		event.preventDefault();
+
+		const zoomIntensity = 0.1;
+		const wheel = event.deltaY < 0 ? 1 : -1;
+		const oldScale = scale;
+
+		// Calculate new scale
+		scale += wheel * zoomIntensity * scale;
+		scale = Math.max(minScale, Math.min(maxScale, scale));
+
+		// Adjust pan offsets to zoom relative to the mouse position
+		if (containerEl && imageEl) {
+			const rect = containerEl.getBoundingClientRect();
+			const mouseX = event.clientX - rect.left;
+			const mouseY = event.clientY - rect.top;
+
+			const nodeX = (mouseX - panOffsetX) / oldScale;
+			const nodeY = (mouseY - panOffsetY) / oldScale;
+
+			panOffsetX = mouseX - nodeX * scale;
+			panOffsetY = mouseY - nodeY * scale;
+
+			clampPanOffsets();
+		}
 	}
 
 	function handleImageLoad() {
 		hasLoaded = true;
+
+		if (imageEl && containerEl) {
+			const imageWidth = imageEl!.naturalWidth * scale;
+			const imageHeight = imageEl!.naturalHeight * scale;
+			const containerWidth = containerEl.clientWidth;
+			const containerHeight = containerEl.clientHeight;
+
+			panOffsetX = (containerWidth - imageWidth) / 2;
+			panOffsetY = (containerHeight - imageHeight) / 2;
+		}
 	}
 
 	function handleSearch(text: string) {
@@ -109,8 +153,23 @@
 			.map(([key, _]) => key);
 	}
 
+	function clampPanOffsets() {
+		if (imageEl && containerEl) {
+			const scaledWidth = imageEl!.naturalWidth * scale;
+			const scaledHeight = imageEl!.naturalHeight * scale;
+			const containerWidth = containerEl.clientWidth;
+			const containerHeight = containerEl.clientHeight;
+
+			const minPanX = containerWidth - scaledWidth;
+			const minPanY = containerHeight - scaledHeight;
+
+			panOffsetX = Math.max(minPanX, Math.min(0, panOffsetX));
+			panOffsetY = Math.max(minPanY, Math.min(0, panOffsetY));
+		}
+	}
+
 	// Add event listeners for global mouse events to handle panning
-	$effect(() => {
+	onMount(() => {
 		const handleMove = (event: MouseEvent) => {
 			if (isPanning) {
 				handleMouseMove(event);
@@ -148,22 +207,24 @@
 	<span> > Search results: {searchResults.length}</span>
 </div>
 
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div
 	bind:this={containerEl}
 	class="image-container"
-	tabindex="0"
+	role="application"
+	tabindex="-1"
 	onmousedown={(event) => handleMousedown(null, event)}
 	onwheel={handleWheel}
 >
 	<div
 		class="image-wrapper"
 		style="
-			transform: translate({panOffsetX}px, {panOffsetY}px);
-			user-select: none;
-			-webkit-user-select: none;
-			-moz-user-select: none;
-			cursor: {isPanning ? 'grabbing' : 'grab'}
-		"
+            width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+            height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+            transform: translate({panOffsetX}px, {panOffsetY}px);
+            user-select: none;
+            cursor: {isPanning ? 'grabbing' : 'grab'};
+        "
 	>
 		<img
 			bind:this={imageEl}
@@ -171,7 +232,12 @@
 			src="{base}/skill-tree.png"
 			alt="Interactive"
 			draggable="false"
-			style="pointer-events: none; max-width: none;"
+			style="
+                pointer-events: none;
+                max-width: none;
+                width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+                height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+            "
 		/>
 
 		<!-- Display hoverable regions with lighter color -->
@@ -185,9 +251,9 @@
 						class:unidentified={nodesDesc[node.id].name === node.id}
 						class:search-result={searchResults.includes(node.id)}
 						style="
-						left: {node.x * imageEl?.width - 10}px;
-						top: {node.y * imageEl?.height - 10}px;
-					"
+                            left: {node.x * imageEl!.naturalWidth * scale - 10}px;
+                            top: {node.y * imageEl!.naturalHeight * scale - 10}px;
+                        "
 						onmousedown={(event) => handleMousedown(node, event)}
 						onmouseenter={() => handleMouseEnter(node)}
 						onmouseleave={handleMouseLeave}
@@ -214,33 +280,40 @@
 		display: inline-block;
 		overflow: hidden;
 		outline: none;
+		width: 100vw;
+		height: 80vh;
 	}
 
 	.image-wrapper {
-		position: relative;
-		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.notable,
+	.keystone {
+		position: absolute;
+		pointer-events: auto;
 	}
 
 	.notable {
-		position: absolute;
 		width: 20px;
 		height: 20px;
 		border-radius: 50%;
 		background-color: rgba(255, 255, 0, 0.2);
-		pointer-events: auto; /* Allow mouse events */
 	}
+
 	.notable.unidentified {
 		background-color: rgba(255, 100, 100, 0.2);
 	}
 
 	.keystone {
-		position: absolute;
 		width: 25px;
 		height: 25px;
 		border-radius: 50%;
 		background-color: rgba(100, 255, 100, 0.2);
-		pointer-events: auto; /* Allow mouse events */
 	}
+
 	.keystone.unidentified {
 		background-color: rgba(255, 0, 100, 0.2);
 	}
@@ -251,32 +324,29 @@
 
 	.tooltip {
 		position: absolute;
-		background-color: black; /* Dark background */
-		color: white; /* White text */
-		font-family: 'Georgia', serif; /* Classic serif font */
-		border: 2px solid #ffffff; /* White border */
+		background-color: black;
+		color: white;
+		font-family: 'Georgia', serif;
+		border: 2px solid #ffffff;
 		padding: 20px;
-		max-width: 400px; /* Limit width */
-		margin: 0 auto; /* Center align */
-		border-radius: 5px; /* Slight rounded corners */
+		max-width: 400px;
+		border-radius: 5px;
+	}
 
-		/* Title style */
-		.title {
-			font-family: 'Fontin SmallCaps', sans-serif;
-			font-size: 24px;
-			font-weight: bold;
-			text-align: center;
-			color: #e4dfd7; /* Golden-like color for title */
-			margin-bottom: 15px; /* Spacing below title */
-		}
+	.tooltip .title {
+		font-family: 'Fontin SmallCaps', sans-serif;
+		font-size: 24px;
+		font-weight: bold;
+		text-align: center;
+		color: #e4dfd7;
+		margin-bottom: 15px;
+	}
 
-		/* Body text style */
-		.body {
-			font-family: 'Fontin SmallCaps', sans-serif;
-			font-size: 16px;
-			line-height: 1.5; /* Improve readability */
-			color: #7d7aad; /* Light blue for body text */
-			margin-bottom: 15px; /* Spacing below body */
-		}
+	.tooltip .body {
+		font-family: 'Fontin SmallCaps', sans-serif;
+		font-size: 16px;
+		line-height: 1.5;
+		color: #7d7aad;
+		margin-bottom: 15px;
 	}
 </style>
