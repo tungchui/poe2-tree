@@ -20,7 +20,7 @@ Adding information nodes is quite simple
 
 1. Open the skill tree and hover the mouse over the node you want to transcribe, it will show the node id if it has not been transcribed yet.
 
-2. Go to the `src/data/nodes_desc.json` and search for the node id and edit the entry with the information you found.
+2. Go to the `src/lib/data/nodes_desc.json` and search for the node id and edit the entry with the information you found.
 
 Example:
 

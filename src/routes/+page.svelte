@@ -1,18 +1,8 @@
 <script lang="ts">
-	import nodes from '/src/data/nodes.json';
-	import nodesDesc from '/src/data/nodes_desc.json';
 	import { base } from '$app/paths';
+	import { type NodePosition, type TooltipContent, loadData } from '$lib';
 
-	interface NodePosition {
-		x: number;
-		y: number;
-		id: string;
-	}
-
-	interface TooltipContent {
-		name: string;
-		stats: string[];
-	}
+	let { positions: nodes, nodesDescription: nodesDesc } = loadData();
 
 	let imageEl: HTMLImageElement | null = $state(null);
 	let hasLoaded = $state(false);
@@ -21,6 +11,12 @@
 	let tooltipHold = $state(false);
 	let tooltipX = $state(0);
 	let tooltipY = $state(0);
+
+	let searchTerm = $state('mini');
+	let searchResults: string[] = $state([]);
+	$effect(() => {
+		handleSearch(searchTerm);
+	});
 
 	function activateTooltip(node: NodePosition) {
 		tooltipContent = nodesDesc[node.id];
@@ -50,12 +46,38 @@
 		// this is necessary to prevent the nodes being rendered at (0, 0) before the image has loaded
 		hasLoaded = true;
 	}
+
+	function handleSearch(text: string) {
+		if (!text) {
+			searchResults = [];
+			return;
+		}
+
+		const search = text.toLowerCase();
+
+		let notables = Object.entries(nodesDesc)
+			.filter(
+				([_, values]) =>
+					values.name.toLowerCase().includes(search) ||
+					values.stats.some((value) => value.toLowerCase().includes(search))
+			)
+			.map(([key, _]) => key);
+
+		searchResults = notables;
+	}
 </script>
 
-<h1>Path of Exile 2 Skill tree Preview</h1>
+<div style="padding-left: 16px;">
+	<h1>Path of Exile 2 Skill tree Preview</h1>
 
-<p>Incomplete skill tree preview. Hover over the nodes to see their details.</p>
-<p>Check out the Github repository for how to contribute to this project.</p>
+	<p>Incomplete skill tree preview. Hover over the nodes to see their details.</p>
+	<p>Check out the Github repository for how to contribute to this project.</p>
+</div>
+
+<div>
+	<label for="search">Search</label>
+	<input type="text" placeholder="Search..." bind:value={searchTerm} />
+</div>
 
 <div class="image-container">
 	<img bind:this={imageEl} onload={handleImageLoad} src="{base}/skill-tree.png" alt="Interactive" />
@@ -67,6 +89,7 @@
 			<!-- svelte-ignore a11y_no_static_element_interactions -->
 			<div
 				class="notable"
+				class:search-result={searchResults.includes(node.id)}
 				style="
         left: {node.x * imageEl?.width - 10}px;
         top: {node.y * imageEl?.height - 10}px;
@@ -124,6 +147,9 @@
 		border-radius: 50%;
 		background-color: rgba(255, 0, 255, 0.2);
 		pointer-events: auto; /* Allow mouse events */
+	}
+	.search-result {
+		border: 2px solid rgba(255, 0, 0, 0.8);
 	}
 
 	.tooltip {
