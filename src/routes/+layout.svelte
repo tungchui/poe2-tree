@@ -6,7 +6,6 @@
 
 <style>
 	:global(body) {
-		/* applies to <body> */
 		margin: 0;
 		background-color: black;
 		color: #e4dfd7;

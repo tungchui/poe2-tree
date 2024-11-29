@@ -12,7 +12,7 @@
 	let tooltipX = $state(0);
 	let tooltipY = $state(0);
 
-	let searchTerm = $state('mini');
+	let searchTerm = $state('');
 	let searchResults: string[] = $state([]);
 	$effect(() => {
 		handleSearch(searchTerm);
@@ -55,15 +55,13 @@
 
 		const search = text.toLowerCase();
 
-		let notables = Object.entries(nodesDesc)
+		searchResults = Object.entries(nodesDesc)
 			.filter(
 				([_, values]) =>
 					values.name.toLowerCase().includes(search) ||
 					values.stats.some((value) => value.toLowerCase().includes(search))
 			)
 			.map(([key, _]) => key);
-
-		searchResults = notables;
 	}
 </script>
 
@@ -77,6 +75,8 @@
 <div>
 	<label for="search">Search</label>
 	<input type="text" placeholder="Search..." bind:value={searchTerm} />
+
+	<span> > Search results: {searchResults.length}</span>
 </div>
 
 <div class="image-container">
@@ -85,33 +85,22 @@
 	<!-- Display hoverable regions with lighter color -->
 	{#if hasLoaded}
 		<!-- content here -->
-		{#each nodes.notables as node}
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<div
-				class="notable"
-				class:search-result={searchResults.includes(node.id)}
-				style="
+		{#each ['notables', 'keystones'] as kind}
+			{#each nodes[kind] as node}
+				<!-- svelte-ignore a11y_no_static_element_interactions -->
+				<div
+					class:notable={node.id.startsWith('N')}
+					class:keystone={node.id.startsWith('K')}
+					class:search-result={searchResults.includes(node.id)}
+					style="
         left: {node.x * imageEl?.width - 10}px;
         top: {node.y * imageEl?.height - 10}px;
       "
-				onmousedown={() => handleMousedown(node)}
-				onmouseenter={() => handleMouseEnter(node)}
-				onmouseleave={handleMouseLeave}
-			></div>
-		{/each}
-
-		{#each nodes.keystones as node}
-			<!-- svelte-ignore a11y_no_static_element_interactions -->
-			<div
-				class="keystone"
-				style="
-        left: {node.x * imageEl?.width - 10}px;
-        top: {node.y * imageEl?.height - 10}px;
-      "
-				onmousedown={() => handleMousedown(node)}
-				onmouseenter={() => handleMouseEnter(node)}
-				onmouseleave={handleMouseLeave}
-			></div>
+					onmousedown={() => handleMousedown(node)}
+					onmouseenter={() => handleMouseEnter(node)}
+					onmouseleave={handleMouseLeave}
+				></div>
+			{/each}
 		{/each}
 	{/if}
 
