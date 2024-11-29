@@ -22,8 +22,7 @@
   	"K6": {
     		"name": "Ancestral Bond",
     		"stats": ["Unlimited number of Summoned Totem,Totem reserve 100 Spirit each"]
-  }
-}
+	},
 	"K7": {
 		"name": "K7",
 		"stats": []
