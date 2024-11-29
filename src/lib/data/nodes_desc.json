@@ -80,8 +80,11 @@
 		"stats": []
 	},
 	"K21": {
-		"name": "K21",
-		"stats": []
+		"name": "Glancing Blows",
+		"stats": [
+			"Block Chance is doubled",
+			"You take 50% of Damage from Blocked Hits"
+		]
 	},
 	"K22": {
 		"name": "K22",
@@ -1925,8 +1928,10 @@
 		"stats": []
 	},
 	"N451": {
-		"name": "N451",
-		"stats": []
+		"name": "Lay Siege",
+		"stats": [
+			"1% increased Damage per 1% Chance to Block"
+		]
 	},
 	"N452": {
 		"name": "N452",
@@ -1941,8 +1946,10 @@
 		"stats": []
 	},
 	"N455": {
-		"name": "N455",
-		"stats": []
+		"name": "Quick-change Act",
+		"stats": [
+			"50% increased Weapon Swap Speed"
+		]
 	},
 	"N456": {
 		"name": "N456",
@@ -2005,12 +2012,16 @@
 		"stats": []
 	},
 	"N471": {
-		"name": "N471",
-		"stats": []
+		"name": "Grenadier",
+		"stats": [
+			"Grenade Skills have +1 Cooldown Use"
+		]
 	},
 	"N472": {
-		"name": "N472",
-		"stats": []
+		"name": "Cluster Bombs",
+		"stats": [
+			"Grenade Skills Fire an additional Projectile"
+		]
 	},
 	"N473": {
 		"name": "N473",
@@ -2129,8 +2140,11 @@
 		"stats": []
 	},
 	"N502": {
-		"name": "N502",
-		"stats": []
+		"name": "Multitasking",
+		"stats": [
+			"15% increased Skill Effect Duration",
+			"12% increased Cooldown Recovery Rate"
+		]
 	},
 	"N503": {
 		"name": "N503",
@@ -2197,8 +2211,11 @@
 		"stats": []
 	},
 	"N519": {
-		"name": "N519",
-		"stats": []
+		"name": "Distracting Presence",
+		"stats": [
+			"10% increased Cooldown Recovery Rate",
+			"Enemies in your Presence have 10% reduced Cooldown Recovery Rate"
+		]
 	},
 	"N520": {
 		"name": "N520",
@@ -2321,8 +2338,10 @@
 		"stats": []
 	},
 	"N550": {
-		"name": "N550",
-		"stats": []
+		"name": "Levitation",
+		"stats": [
+			"Unaffected by Enemy Ground Effects for 1 second after stepping on them"
+		]
 	},
 	"N551": {
 		"name": "N551",
@@ -2349,24 +2368,31 @@
 		"stats": []
 	},
 	"N557": {
-		"name": "N557",
-		"stats": []
+		"name": "Metabolism",
+		"stats": [
+			"Life Leech effects are not removed when Unreserved Life is Filled"
+		]
 	},
 	"N558": {
 		"name": "N558",
 		"stats": []
 	},
 	"N559": {
-		"name": "N559",
-		"stats": []
+		"name": "Apocalypse",
+		"stats": [
+			"40% reduced Damage",
+			"Herald Skills deal 200% increased Damage"
+		]
 	},
 	"N560": {
 		"name": "N560",
 		"stats": []
 	},
 	"N561": {
-		"name": "N561",
-		"stats": []
+		"name": "Repeating Explosives",
+		"stats": [
+			"Grenades have 20% change to activate a second time"
+		]
 	},
 	"N562": {
 		"name": "N562",
@@ -2381,8 +2407,10 @@
 		"stats": []
 	},
 	"N565": {
-		"name": "N565",
-		"stats": []
+		"name": "Cull the Hordes",
+		"stats": [
+			"25% increased Culling Strike Threshold"
+		]
 	},
 	"N566": {
 		"name": "N566",
@@ -2401,8 +2429,10 @@
 		"stats": []
 	},
 	"N570": {
-		"name": "N570",
-		"stats": []
+		"name": "Polymathy",
+		"stats": [
+			"10% increased Attributes"
+		]
 	},
 	"N571": {
 		"name": "N571",
