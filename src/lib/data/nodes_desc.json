@@ -1878,7 +1878,7 @@
 		"name": "Made to Last",
 		"stats": [
 			"0.5% of Physical Damage prevented from Hits in the past",
-			"10 seconds is Regenerated as Life pre second"
+			"10 seconds is Regenerated as Life per second"
 		]
 	},
 	"N422": {
@@ -2116,9 +2116,7 @@
 	},
 	"N477": {
 		"name": "Spike Pit",
-		"stats": [
-			"Jagged Ground you create applies 10% increated Damage taken to Enemies"
-		]
+		"stats": ["Jagged Ground you create applies 10% increased Damage taken to Enemies"]
 	},
 	"N478": {
 		"name": "N478",
