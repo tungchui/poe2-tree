@@ -63,8 +63,8 @@
 		"stats": []
 	},
 	"K16": {
-		"name": "K16",
-		"stats": []
+		"name": "Avatar of Fire",
+		"stats": ["75% of Damage Converted to Fire Damage", "Deal no Non-Fire Damage"]
 	},
 	"K17": {
 		"name": "K17",
@@ -79,8 +79,8 @@
 		"stats": []
 	},
 	"K20": {
-		"name": "K20",
-		"stats": []
+		"name": "Giant's Blood",
+		"stats": ["You Can wield Two-Handed Axes, Maces and Swords in one hand", "Double Attribute requirements of weapons"]
 	},
 	"K21": {
 		"name": "K21",
