@@ -75,9 +75,9 @@
 		"name": "K19",
 		"stats": []
 	},
-	"K20": {
-		"name": "K20",
-		"stats": []
+	"K16": {
+		"name": "Giant's Blood",
+		"stats": ["You Can wield Two-Handed Axes, Maces and Swords in one hand", "Double Attribute requirements of weapons"]
 	},
 	"K21": {
 		"name": "K21",
