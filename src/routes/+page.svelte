@@ -4,6 +4,7 @@
 
 	let { positions: nodes, nodesDescription: nodesDesc } = loadData();
 
+	let containerEl: HTMLDivElement | null = $state(null);
 	let imageEl: HTMLImageElement | null = $state(null);
 	let hasLoaded = $state(false);
 
@@ -11,6 +12,13 @@
 	let tooltipHold = $state(false);
 	let tooltipX = $state(0);
 	let tooltipY = $state(0);
+
+	// New state for panning
+	let isPanning = $state(false);
+	let panStartX = $state(0);
+	let panStartY = $state(0);
+	let panOffsetX = $state(0);
+	let panOffsetY = $state(0);
 
 	let searchTerm = $state('');
 	let searchResults: string[] = $state([]);
@@ -26,24 +34,61 @@
 		tooltipX = node.x * imageEl.width + 20; // Offset for positioning
 		tooltipY = node.y * imageEl.height - 20;
 	}
-	function handleMousedown(node: NodePosition) {
-		tooltipHold = true;
-		activateTooltip(node);
+
+	function handleMousedown(node: NodePosition | null, event: MouseEvent) {
+		// Prevent default image dragging and text selection
+		event.preventDefault();
+
+		if (event.button === 0) {
+			// Left mouse button
+			if (containerEl) {
+				containerEl.focus(); // Ensure the container can receive keyboard events
+			}
+
+			isPanning = true;
+			panStartX = event.clientX - panOffsetX;
+			panStartY = event.clientY - panOffsetY;
+
+			if (node) {
+				tooltipHold = true;
+				activateTooltip(node);
+			}
+		}
+	}
+
+	function handleMouseMove(event: MouseEvent) {
+		if (isPanning && containerEl) {
+			panOffsetX = event.clientX - panStartX;
+			panOffsetY = event.clientY - panStartY;
+		}
+	}
+
+	function handleMouseUp(event: MouseEvent) {
+		if (event.button === 0) {
+			// Left mouse button
+			isPanning = false;
+			tooltipHold = false;
+		}
 	}
 
 	function handleMouseEnter(node: NodePosition) {
-		activateTooltip(node);
-		tooltipHold = false;
+		if (!isPanning) {
+			activateTooltip(node);
+		}
 	}
 
 	function handleMouseLeave() {
-		if (!tooltipHold) {
+		if (!tooltipHold && !isPanning) {
 			tooltipContent = null;
 		}
 	}
 
+	function handleWheel(event: WheelEvent) {
+		// Optional: Add zoom functionality if desired
+		event.preventDefault();
+	}
+
 	function handleImageLoad() {
-		// this is necessary to prevent the nodes being rendered at (0, 0) before the image has loaded
 		hasLoaded = true;
 	}
 
@@ -63,12 +108,36 @@
 			)
 			.map(([key, _]) => key);
 	}
+
+	// Add event listeners for global mouse events to handle panning
+	$effect(() => {
+		const handleMove = (event: MouseEvent) => {
+			if (isPanning) {
+				handleMouseMove(event);
+			}
+		};
+
+		const handleUp = (event: MouseEvent) => {
+			if (isPanning) {
+				handleMouseUp(event);
+			}
+		};
+
+		window.addEventListener('mousemove', handleMove);
+		window.addEventListener('mouseup', handleUp);
+
+		return () => {
+			window.removeEventListener('mousemove', handleMove);
+			window.removeEventListener('mouseup', handleUp);
+		};
+	});
 </script>
 
 <div style="padding-left: 16px;">
 	<h1>Path of Exile 2 Skill tree Preview</h1>
 
 	<p>Incomplete skill tree preview. Hover over the nodes to see their details.</p>
+	<p>Tip: Click and Drag to pan the skill tree</p>
 	<p>Check out the Github repository for how to contribute to this project.</p>
 </div>
 
@@ -79,45 +148,75 @@
 	<span> > Search results: {searchResults.length}</span>
 </div>
 
-<div class="image-container">
-	<img bind:this={imageEl} onload={handleImageLoad} src="{base}/skill-tree.png" alt="Interactive" />
+<div
+	bind:this={containerEl}
+	class="image-container"
+	tabindex="0"
+	onmousedown={(event) => handleMousedown(null, event)}
+	onwheel={handleWheel}
+>
+	<div
+		class="image-wrapper"
+		style="
+			transform: translate({panOffsetX}px, {panOffsetY}px);
+			user-select: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			cursor: {isPanning ? 'grabbing' : 'grab'}
+		"
+	>
+		<img
+			bind:this={imageEl}
+			onload={handleImageLoad}
+			src="{base}/skill-tree.png"
+			alt="Interactive"
+			draggable="false"
+			style="pointer-events: none; max-width: none;"
+		/>
 
-	<!-- Display hoverable regions with lighter color -->
-	{#if hasLoaded}
-		<!-- content here -->
-		{#each ['notables', 'keystones'] as kind}
-			{#each nodes[kind] as node}
-				<!-- svelte-ignore a11y_no_static_element_interactions -->
-				<div
-					class:notable={node.id.startsWith('N')}
-					class:keystone={node.id.startsWith('K')}
-					class:unidentified={nodesDesc[node.id].name === node.id}
-					class:search-result={searchResults.includes(node.id)}
-					style="
-        left: {node.x * imageEl?.width - 10}px;
-        top: {node.y * imageEl?.height - 10}px;
-      "
-					onmousedown={() => handleMousedown(node)}
-					onmouseenter={() => handleMouseEnter(node)}
-					onmouseleave={handleMouseLeave}
-				></div>
+		<!-- Display hoverable regions with lighter color -->
+		{#if hasLoaded}
+			{#each ['notables', 'keystones'] as kind}
+				{#each nodes[kind] as node}
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
+					<div
+						class:notable={node.id.startsWith('N')}
+						class:keystone={node.id.startsWith('K')}
+						class:unidentified={nodesDesc[node.id].name === node.id}
+						class:search-result={searchResults.includes(node.id)}
+						style="
+						left: {node.x * imageEl?.width - 10}px;
+						top: {node.y * imageEl?.height - 10}px;
+					"
+						onmousedown={(event) => handleMousedown(node, event)}
+						onmouseenter={() => handleMouseEnter(node)}
+						onmouseleave={handleMouseLeave}
+					></div>
+				{/each}
 			{/each}
-		{/each}
-	{/if}
+		{/if}
 
-	<!-- Tooltip displayed when a region is hovered -->
-	{#if tooltipContent != null}
-		<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
-			<div class="title">{tooltipContent.name}</div>
-			{#each tooltipContent.stats as stat}
-				<div class="body">{stat}</div>
-			{/each}
-		</div>
-	{/if}
+		<!-- Tooltip displayed when a region is hovered -->
+		{#if tooltipContent != null}
+			<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
+				<div class="title">{tooltipContent.name}</div>
+				{#each tooltipContent.stats as stat}
+					<div class="body">{stat}</div>
+				{/each}
+			</div>
+		{/if}
+	</div>
 </div>
 
 <style>
 	.image-container {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		outline: none;
+	}
+
+	.image-wrapper {
 		position: relative;
 		display: inline-block;
 	}
