@@ -44,16 +44,22 @@
 		"stats": []
 	},
 	"K12": {
-		"name": "K12",
-		"stats": []
+		"name": "Heartstopper",
+		"stats": [
+			"Take 75% less Damage over Time if you've started taking Damage over Time in the past second",
+			"Take 50% more Damage over Time if you've haven't started taking Damage over Time in the past second"
+		]
 	},
 	"K13": {
 		"name": "K13",
 		"stats": []
 	},
 	"K14": {
-		"name": "K14",
-		"stats": []
+		"name": "Acrobatics",
+		"stats": [
+			"Can Evade all Hits",
+			"50% less Evasion Rating"
+		]
 	},
 	"K15": {
 		"name": "K15",
@@ -64,12 +70,19 @@
 		"stats": []
 	},
 	"K17": {
-		"name": "K17",
-		"stats": []
+		"name": "Oasis",
+		"stats": [
+			"Cannot use Charms",
+			"30% more Recovery from Flasks"
+		]
 	},
 	"K18": {
-		"name": "K18",
-		"stats": []
+		"name": "Elemental Equilibrium",
+		"stats": [
+			"Hits that deal Fire Damage remove Fire Exposure and inflict Lightning Exposure",
+			"Hits that deal Cold Damage remove Cold Exposure and inflict Fire Exposure",
+			"Hits that deal Lightning Damage remove Lightning Exposure and inflict Cold Exposure"
+		]
 	},
 	"K19": {
 		"name": "K19",
@@ -1329,8 +1342,10 @@
 		"stats": []
 	},
 	"N302": {
-		"name": "N302",
-		"stats": []
+		"name": "Low Tolerance",
+		"stats": [
+			"60% increased Effect of Poison against Enemies that are not Poisoned"
+		]
 	},
 	"N303": {
 		"name": "N303",
@@ -1389,8 +1404,10 @@
 		"stats": []
 	},
 	"N317": {
-		"name": "N317",
-		"stats": []
+		"name": "Falcon Technique",
+		"stats": [
+			"1% increased Attack Speed per 15 Dexterity"
+		]
 	},
 	"N318": {
 		"name": "N318",
@@ -1529,8 +1546,11 @@
 		"stats": []
 	},
 	"N352": {
-		"name": "N352",
-		"stats": []
+		"name": "Stacking Toxins",
+		"stats": [
+			"Can Poison enemies an additional time",
+			"20% reduced Effect of Poison"
+		]
 	},
 	"N353": {
 		"name": "N353",
@@ -1829,8 +1849,11 @@
 		"stats": []
 	},
 	"N427": {
-		"name": "N427",
-		"stats": []
+		"name": "Catalysis",
+		"stats": [
+			"20% increased Elemental Damage with Attack Skills",
+			"5% of Physical Damage from Hits taken as Damage of a Random Element"
+		]
 	},
 	"N428": {
 		"name": "N428",
@@ -2017,7 +2040,7 @@
 		"stats": []
 	},
 	"N474": {
-		"name": "N474",
+		"name": "1% increased Attack Speed per 250 Accuracy Rating",
 		"stats": []
 	},
 	"N475": {
@@ -2053,8 +2076,11 @@
 		"stats": []
 	},
 	"N483": {
-		"name": "N483",
-		"stats": []
+		"name": "Unexpected Finesse",
+		"stats": [
+			"10% increased Attack Damage",
+			"Gain Accuracy Rating equal to your Strength"
+		]
 	},
 	"N484": {
 		"name": "N484",
