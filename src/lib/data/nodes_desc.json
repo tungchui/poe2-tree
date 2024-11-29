@@ -2070,8 +2070,8 @@
 		"stats": []
 	},
 	"N474": {
-		"name": "1% increased Attack Speed per 250 Accuracy Rating",
-		"stats": []
+		"name": "Falcon Dive",
+		"stats": ["1% increased Attack Speed per 250 Accuracy Rating"]
 	},
 	"N475": {
 		"name": "N475",
