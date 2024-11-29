@@ -53,6 +53,7 @@ The UI/UX is quite basic and can be improved in many ways, if you have any ideas
 ## Dreamcore Youtube
 
 - [Int Area](https://www.youtube.com/watch?v=tI0xJb1HEYw)
+- [Str/Int Area](https://www.youtube.com/watch?v=XfriM2XvruQb)
 
 # Sources to map
 
@@ -62,4 +63,3 @@ The UI/UX is quite basic and can be improved in many ways, if you have any ideas
 - [Dex Area](https://www.youtube.com/watch?v=WmAI31iog94)
 - [Dex/Str Area](https://www.youtube.com/watch?v=YOQlMiDNpyQ)
 - [Str Area](https://www.youtube.com/watch?v=yPh98i0-oHs)
-- [Str/Int Area](https://www.youtube.com/watch?v=XfriM2XvruQb)
