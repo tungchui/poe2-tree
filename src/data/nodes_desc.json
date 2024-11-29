@@ -1,0 +1,2419 @@
+{
+	"K1": {
+		"name": "Whispers of Doom",
+		"stats": ["You can apply an additional Curse", "Double Activation Delay of Curses"]
+	},
+	"K2": {
+		"name": "Necromantic Talisman",
+		"stats": ["All bonuses from an Equipped Amulet apply to your Minions instead of you"]
+	},
+	"K3": {
+		"name": "Eldritch Battery",
+		"stats": ["Converts all Energy Shield to Mana"]
+	},
+	"K4": {
+		"name": "K4",
+		"stats": []
+	},
+	"K5": {
+		"name": "K5",
+		"stats": []
+	},
+	"K6": {
+		"name": "K6",
+		"stats": []
+	},
+	"K7": {
+		"name": "K7",
+		"stats": []
+	},
+	"K8": {
+		"name": "K8",
+		"stats": []
+	},
+	"K9": {
+		"name": "K9",
+		"stats": []
+	},
+	"K10": {
+		"name": "K10",
+		"stats": []
+	},
+	"K11": {
+		"name": "K11",
+		"stats": []
+	},
+	"K12": {
+		"name": "K12",
+		"stats": []
+	},
+	"K13": {
+		"name": "K13",
+		"stats": []
+	},
+	"K14": {
+		"name": "K14",
+		"stats": []
+	},
+	"K15": {
+		"name": "K15",
+		"stats": []
+	},
+	"K16": {
+		"name": "K16",
+		"stats": []
+	},
+	"K17": {
+		"name": "K17",
+		"stats": []
+	},
+	"K18": {
+		"name": "K18",
+		"stats": []
+	},
+	"K19": {
+		"name": "K19",
+		"stats": []
+	},
+	"K20": {
+		"name": "K20",
+		"stats": []
+	},
+	"K21": {
+		"name": "K21",
+		"stats": []
+	},
+	"K22": {
+		"name": "K22",
+		"stats": []
+	},
+	"K23": {
+		"name": "K23",
+		"stats": []
+	},
+	"N1": {
+		"name": "N1",
+		"stats": []
+	},
+	"N2": {
+		"name": "N2",
+		"stats": []
+	},
+	"N3": {
+		"name": "Lord of Horrors",
+		"stats": ["Minions have 12% reduced Reservation"]
+	},
+	"N4": {
+		"name": "N4",
+		"stats": []
+	},
+	"N5": {
+		"name": "Endless Blizzard",
+		"stats": ["+1 to Level of all Cold Skills"]
+	},
+	"N6": {
+		"name": "N6",
+		"stats": []
+	},
+	"N7": {
+		"name": "N7",
+		"stats": []
+	},
+	"N8": {
+		"name": "N8",
+		"stats": []
+	},
+	"N9": {
+		"name": "N9",
+		"stats": []
+	},
+	"N10": {
+		"name": "N10",
+		"stats": []
+	},
+	"N11": {
+		"name": "N11",
+		"stats": []
+	},
+	"N12": {
+		"name": "Patient Barrier",
+		"stats": ["60% increased maximum Energy Shield", "20% slower start of Energy Shield Recharge"]
+	},
+	"N13": {
+		"name": "N13",
+		"stats": []
+	},
+	"N14": {
+		"name": "N14",
+		"stats": []
+	},
+	"N15": {
+		"name": "Enhanced Barrier",
+		"stats": ["25% increased maximum Energy Shield", "+1% to all maximum Elemental Resistances"]
+	},
+	"N16": {
+		"name": "N16",
+		"stats": []
+	},
+	"N17": {
+		"name": "Right Hand of Darkness",
+		"stats": [
+			"Minions have 20% increased Area of Effect",
+			"Minions have 10% chance to inflict Withered on Hit"
+		]
+	},
+	"N18": {
+		"name": "Left Hand of Darkness",
+		"stats": [
+			"Minions have 20% additional Physical Damage Reduction",
+			"Minions have +23% to Chaos Resistance"
+		]
+	},
+	"N19": {
+		"name": "N19",
+		"stats": []
+	},
+	"N20": {
+		"name": "N20",
+		"stats": []
+	},
+	"N21": {
+		"name": "Arcane Intensity",
+		"stats": ["3% increased Spell Damage per 100 maximum Mana"]
+	},
+	"N22": {
+		"name": "Refocus",
+		"stats": [
+			"30% increased Energy Shield Recharge Rate",
+			"10% chance for Energy Shield Recharge to start when you use a Skill"
+		]
+	},
+	"N23": {
+		"name": "N23",
+		"stats": []
+	},
+	"N24": {
+		"name": "N24",
+		"stats": []
+	},
+	"N25": {
+		"name": "Eldritch Will",
+		"stats": [
+			"3% increased maximum Life, Mana and Energy Shield",
+			"Gain 20% of maximum Energy Shield as additional Stun Threshold"
+		]
+	},
+	"N26": {
+		"name": "Raw Mana",
+		"stats": ["18% increased maximum Mana", "10% increased Mana Cost of Skills"]
+	},
+	"N27": {
+		"name": "N27",
+		"stats": []
+	},
+	"N28": {
+		"name": "N28",
+		"stats": []
+	},
+	"N29": {
+		"name": "N29",
+		"stats": []
+	},
+	"N30": {
+		"name": "N30",
+		"stats": []
+	},
+	"N31": {
+		"name": "N31",
+		"stats": []
+	},
+	"N32": {
+		"name": "Convalescence",
+		"stats": [
+			"15% reduced Energy Shield Recharge Rate",
+			"40% faster start of Energy Shield Recharge"
+		]
+	},
+	"N33": {
+		"name": "N33",
+		"stats": []
+	},
+	"N34": {
+		"name": "N34",
+		"stats": []
+	},
+	"N35": {
+		"name": "N35",
+		"stats": []
+	},
+	"N36": {
+		"name": "N36",
+		"stats": []
+	},
+	"N37": {
+		"name": "N37",
+		"stats": []
+	},
+	"N38": {
+		"name": "N38",
+		"stats": []
+	},
+	"N39": {
+		"name": "N39",
+		"stats": []
+	},
+	"N40": {
+		"name": "N40",
+		"stats": []
+	},
+	"N41": {
+		"name": "N41",
+		"stats": []
+	},
+	"N42": {
+		"name": "N42",
+		"stats": []
+	},
+	"N43": {
+		"name": "N43",
+		"stats": []
+	},
+	"N44": {
+		"name": "N44",
+		"stats": []
+	},
+	"N45": {
+		"name": "Climate Change",
+		"stats": [
+			"20% increased Freeze Buildup",
+			"Gain 25% of Cold Damage as Extra Fire Damage against Frozen Enemies"
+		]
+	},
+	"N46": {
+		"name": "N46",
+		"stats": []
+	},
+	"N47": {
+		"name": "N47",
+		"stats": []
+	},
+	"N48": {
+		"name": "N48",
+		"stats": []
+	},
+	"N49": {
+		"name": "N49",
+		"stats": []
+	},
+	"N50": {
+		"name": "N50",
+		"stats": []
+	},
+	"N51": {
+		"name": "N51",
+		"stats": []
+	},
+	"N52": {
+		"name": "N52",
+		"stats": []
+	},
+	"N53": {
+		"name": "N53",
+		"stats": []
+	},
+	"N54": {
+		"name": "N54",
+		"stats": []
+	},
+	"N55": {
+		"name": "N55",
+		"stats": []
+	},
+	"N56": {
+		"name": "N56",
+		"stats": []
+	},
+	"N57": {
+		"name": "N57",
+		"stats": []
+	},
+	"N58": {
+		"name": "Dependable Ward",
+		"stats": [
+			"25% increased Energy Shield Recharge Rate",
+			"25% faster start of Energy Shield Recharge"
+		]
+	},
+	"N59": {
+		"name": "N59",
+		"stats": []
+	},
+	"N60": {
+		"name": "Ice Walls",
+		"stats": ["200% increased Ice Crystal Life"]
+	},
+	"N61": {
+		"name": "N61",
+		"stats": []
+	},
+	"N62": {
+		"name": "N62",
+		"stats": []
+	},
+	"N63": {
+		"name": "N63",
+		"stats": []
+	},
+	"N64": {
+		"name": "N64",
+		"stats": []
+	},
+	"N65": {
+		"name": "N65",
+		"stats": []
+	},
+	"N66": {
+		"name": "N66",
+		"stats": []
+	},
+	"N67": {
+		"name": "N67",
+		"stats": []
+	},
+	"N68": {
+		"name": "N68",
+		"stats": []
+	},
+	"N69": {
+		"name": "N69",
+		"stats": []
+	},
+	"N70": {
+		"name": "N70",
+		"stats": []
+	},
+	"N71": {
+		"name": "N71",
+		"stats": []
+	},
+	"N72": {
+		"name": "N72",
+		"stats": []
+	},
+	"N73": {
+		"name": "N73",
+		"stats": []
+	},
+	"N74": {
+		"name": "N74",
+		"stats": []
+	},
+	"N75": {
+		"name": "N75",
+		"stats": []
+	},
+	"N76": {
+		"name": "N76",
+		"stats": []
+	},
+	"N77": {
+		"name": "N77",
+		"stats": []
+	},
+	"N78": {
+		"name": "N78",
+		"stats": []
+	},
+	"N79": {
+		"name": "N79",
+		"stats": []
+	},
+	"N80": {
+		"name": "N80",
+		"stats": []
+	},
+	"N81": {
+		"name": "N81",
+		"stats": []
+	},
+	"N82": {
+		"name": "N82",
+		"stats": []
+	},
+	"N83": {
+		"name": "Hallowed",
+		"stats": [
+			"20% increased Stun and Block Recovery",
+			"Gain 20% of maximum Energy Shield as additional Stun Threshold"
+		]
+	},
+	"N84": {
+		"name": "N84",
+		"stats": []
+	},
+	"N85": {
+		"name": "N85",
+		"stats": []
+	},
+	"N86": {
+		"name": "N86",
+		"stats": []
+	},
+	"N87": {
+		"name": "N87",
+		"stats": []
+	},
+	"N88": {
+		"name": "N88",
+		"stats": []
+	},
+	"N89": {
+		"name": "N89",
+		"stats": []
+	},
+	"N90": {
+		"name": "N90",
+		"stats": []
+	},
+	"N91": {
+		"name": "N91",
+		"stats": []
+	},
+	"N92": {
+		"name": "N92",
+		"stats": []
+	},
+	"N93": {
+		"name": "N93",
+		"stats": []
+	},
+	"N94": {
+		"name": "N94",
+		"stats": []
+	},
+	"N95": {
+		"name": "N95",
+		"stats": []
+	},
+	"N96": {
+		"name": "N96",
+		"stats": []
+	},
+	"N97": {
+		"name": "N97",
+		"stats": []
+	},
+	"N98": {
+		"name": "N98",
+		"stats": []
+	},
+	"N99": {
+		"name": "Heavy Buffer",
+		"stats": ["40% increased maximum Energy Shield", "10% reduced maximum Life"]
+	},
+	"N100": {
+		"name": "N100",
+		"stats": []
+	},
+	"N101": {
+		"name": "N101",
+		"stats": []
+	},
+	"N102": {
+		"name": "N102",
+		"stats": []
+	},
+	"N103": {
+		"name": "N103",
+		"stats": []
+	},
+	"N104": {
+		"name": "Psychic Fragmentation",
+		"stats": ["24% chance for Spell Skills to fire 2 additional Projectiles"]
+	},
+	"N105": {
+		"name": "N105",
+		"stats": []
+	},
+	"N106": {
+		"name": "N106",
+		"stats": []
+	},
+	"N107": {
+		"name": "N107",
+		"stats": []
+	},
+	"N108": {
+		"name": "N108",
+		"stats": []
+	},
+	"N109": {
+		"name": "N109",
+		"stats": []
+	},
+	"N110": {
+		"name": "N110",
+		"stats": []
+	},
+	"N111": {
+		"name": "N111",
+		"stats": []
+	},
+	"N112": {
+		"name": "N112",
+		"stats": []
+	},
+	"N113": {
+		"name": "N113",
+		"stats": []
+	},
+	"N114": {
+		"name": "N114",
+		"stats": []
+	},
+	"N115": {
+		"name": "N115",
+		"stats": []
+	},
+	"N116": {
+		"name": "N116",
+		"stats": []
+	},
+	"N117": {
+		"name": "N117",
+		"stats": []
+	},
+	"N118": {
+		"name": "Self Mortification",
+		"stats": [
+			"Gain 20% of maximum Energy Shield as additional Stun Threshold",
+			"20% increased Stun Threshold while on full Life"
+		]
+	},
+	"N119": {
+		"name": "N119",
+		"stats": []
+	},
+	"N120": {
+		"name": "N120",
+		"stats": []
+	},
+	"N121": {
+		"name": "N121",
+		"stats": []
+	},
+	"N122": {
+		"name": "N122",
+		"stats": []
+	},
+	"N123": {
+		"name": "N123",
+		"stats": []
+	},
+	"N124": {
+		"name": "N124",
+		"stats": []
+	},
+	"N125": {
+		"name": "N125",
+		"stats": []
+	},
+	"N126": {
+		"name": "N126",
+		"stats": []
+	},
+	"N127": {
+		"name": "N127",
+		"stats": []
+	},
+	"N128": {
+		"name": "N128",
+		"stats": []
+	},
+	"N129": {
+		"name": "N129",
+		"stats": []
+	},
+	"N130": {
+		"name": "N130",
+		"stats": []
+	},
+	"N131": {
+		"name": "N131",
+		"stats": []
+	},
+	"N132": {
+		"name": "N132",
+		"stats": []
+	},
+	"N133": {
+		"name": "N133",
+		"stats": []
+	},
+	"N134": {
+		"name": "N134",
+		"stats": []
+	},
+	"N135": {
+		"name": "N135",
+		"stats": []
+	},
+	"N136": {
+		"name": "N136",
+		"stats": []
+	},
+	"N137": {
+		"name": "N137",
+		"stats": []
+	},
+	"N138": {
+		"name": "N138",
+		"stats": []
+	},
+	"N139": {
+		"name": "N139",
+		"stats": []
+	},
+	"N140": {
+		"name": "N140",
+		"stats": []
+	},
+	"N141": {
+		"name": "N141",
+		"stats": []
+	},
+	"N142": {
+		"name": "Breath of Fire",
+		"stats": ["Damage Penetrates 15% Fire Resistance", "+10 to Strength"]
+	},
+	"N143": {
+		"name": "N143",
+		"stats": []
+	},
+	"N144": {
+		"name": "N144",
+		"stats": []
+	},
+	"N145": {
+		"name": "N145",
+		"stats": []
+	},
+	"N146": {
+		"name": "N146",
+		"stats": []
+	},
+	"N147": {
+		"name": "N147",
+		"stats": []
+	},
+	"N148": {
+		"name": "N148",
+		"stats": []
+	},
+	"N149": {
+		"name": "N149",
+		"stats": []
+	},
+	"N150": {
+		"name": "N150",
+		"stats": []
+	},
+	"N151": {
+		"name": "N151",
+		"stats": []
+	},
+	"N152": {
+		"name": "N152",
+		"stats": []
+	},
+	"N153": {
+		"name": "N153",
+		"stats": []
+	},
+	"N154": {
+		"name": "N154",
+		"stats": []
+	},
+	"N155": {
+		"name": "N155",
+		"stats": []
+	},
+	"N156": {
+		"name": "N156",
+		"stats": []
+	},
+	"N157": {
+		"name": "N157",
+		"stats": []
+	},
+	"N158": {
+		"name": "N158",
+		"stats": []
+	},
+	"N159": {
+		"name": "N159",
+		"stats": []
+	},
+	"N160": {
+		"name": "N160",
+		"stats": []
+	},
+	"N161": {
+		"name": "N161",
+		"stats": []
+	},
+	"N162": {
+		"name": "N162",
+		"stats": []
+	},
+	"N163": {
+		"name": "N163",
+		"stats": []
+	},
+	"N164": {
+		"name": "N164",
+		"stats": []
+	},
+	"N165": {
+		"name": "Essence Infusion",
+		"stats": ["40% increased Energy Shield Recharge Rate", "+10 to Intelligence"]
+	},
+	"N166": {
+		"name": "N166",
+		"stats": []
+	},
+	"N167": {
+		"name": "N167",
+		"stats": []
+	},
+	"N168": {
+		"name": "N168",
+		"stats": []
+	},
+	"N169": {
+		"name": "N169",
+		"stats": []
+	},
+	"N170": {
+		"name": "N170",
+		"stats": []
+	},
+	"N171": {
+		"name": "Melding",
+		"stats": ["40% increased maximum Energy Shield", "10% reduced maximum Mana"]
+	},
+	"N172": {
+		"name": "N172",
+		"stats": []
+	},
+	"N173": {
+		"name": "N173",
+		"stats": []
+	},
+	"N174": {
+		"name": "Dampening Shield",
+		"stats": [
+			"28% increased maximum Energy Shield",
+			"Gain 12% of maximum Energy Shield as additional Stun Threshold"
+		]
+	},
+	"N175": {
+		"name": "Rapid Recharge",
+		"stats": [
+			"25% increased Energy Shield Recharge Rate",
+			"25% faster start of Energy Shield Recharge"
+		]
+	},
+	"N176": {
+		"name": "N176",
+		"stats": []
+	},
+	"N177": {
+		"name": "N177",
+		"stats": []
+	},
+	"N178": {
+		"name": "N178",
+		"stats": []
+	},
+	"N179": {
+		"name": "Mana Blessing",
+		"stats": ["+20 to maximum Mana", "6% increased maximum Mana"]
+	},
+	"N180": {
+		"name": "N180",
+		"stats": []
+	},
+	"N181": {
+		"name": "N181",
+		"stats": []
+	},
+	"N182": {
+		"name": "N182",
+		"stats": []
+	},
+	"N183": {
+		"name": "N183",
+		"stats": []
+	},
+	"N184": {
+		"name": "N184",
+		"stats": []
+	},
+	"N185": {
+		"name": "N185",
+		"stats": []
+	},
+	"N186": {
+		"name": "N186",
+		"stats": []
+	},
+	"N187": {
+		"name": "N187",
+		"stats": []
+	},
+	"N188": {
+		"name": "N188",
+		"stats": []
+	},
+	"N189": {
+		"name": "N189",
+		"stats": []
+	},
+	"N190": {
+		"name": "N190",
+		"stats": []
+	},
+	"N191": {
+		"name": "N191",
+		"stats": []
+	},
+	"N192": {
+		"name": "N192",
+		"stats": []
+	},
+	"N193": {
+		"name": "N193",
+		"stats": []
+	},
+	"N194": {
+		"name": "N194",
+		"stats": []
+	},
+	"N195": {
+		"name": "N195",
+		"stats": []
+	},
+	"N196": {
+		"name": "N196",
+		"stats": []
+	},
+	"N197": {
+		"name": "N197",
+		"stats": []
+	},
+	"N198": {
+		"name": "N198",
+		"stats": []
+	},
+	"N199": {
+		"name": "N199",
+		"stats": []
+	},
+	"N200": {
+		"name": "N200",
+		"stats": []
+	},
+	"N201": {
+		"name": "N201",
+		"stats": []
+	},
+	"N202": {
+		"name": "N202",
+		"stats": []
+	},
+	"N203": {
+		"name": "N203",
+		"stats": []
+	},
+	"N204": {
+		"name": "N204",
+		"stats": []
+	},
+	"N205": {
+		"name": "N205",
+		"stats": []
+	},
+	"N206": {
+		"name": "N206",
+		"stats": []
+	},
+	"N207": {
+		"name": "N207",
+		"stats": []
+	},
+	"N208": {
+		"name": "N208",
+		"stats": []
+	},
+	"N209": {
+		"name": "N209",
+		"stats": []
+	},
+	"N210": {
+		"name": "N210",
+		"stats": []
+	},
+	"N211": {
+		"name": "N211",
+		"stats": []
+	},
+	"N212": {
+		"name": "N212",
+		"stats": []
+	},
+	"N213": {
+		"name": "N213",
+		"stats": []
+	},
+	"N214": {
+		"name": "N214",
+		"stats": []
+	},
+	"N215": {
+		"name": "N215",
+		"stats": []
+	},
+	"N216": {
+		"name": "N216",
+		"stats": []
+	},
+	"N217": {
+		"name": "N217",
+		"stats": []
+	},
+	"N218": {
+		"name": "N218",
+		"stats": []
+	},
+	"N219": {
+		"name": "N219",
+		"stats": []
+	},
+	"N220": {
+		"name": "N220",
+		"stats": []
+	},
+	"N221": {
+		"name": "N221",
+		"stats": []
+	},
+	"N222": {
+		"name": "N222",
+		"stats": []
+	},
+	"N223": {
+		"name": "N223",
+		"stats": []
+	},
+	"N224": {
+		"name": "N224",
+		"stats": []
+	},
+	"N225": {
+		"name": "N225",
+		"stats": []
+	},
+	"N226": {
+		"name": "N226",
+		"stats": []
+	},
+	"N227": {
+		"name": "N227",
+		"stats": []
+	},
+	"N228": {
+		"name": "N228",
+		"stats": []
+	},
+	"N229": {
+		"name": "N229",
+		"stats": []
+	},
+	"N230": {
+		"name": "N230",
+		"stats": []
+	},
+	"N231": {
+		"name": "N231",
+		"stats": []
+	},
+	"N232": {
+		"name": "N232",
+		"stats": []
+	},
+	"N233": {
+		"name": "N233",
+		"stats": []
+	},
+	"N234": {
+		"name": "N234",
+		"stats": []
+	},
+	"N235": {
+		"name": "N235",
+		"stats": []
+	},
+	"N236": {
+		"name": "N236",
+		"stats": []
+	},
+	"N237": {
+		"name": "N237",
+		"stats": []
+	},
+	"N238": {
+		"name": "N238",
+		"stats": []
+	},
+	"N239": {
+		"name": "N239",
+		"stats": []
+	},
+	"N240": {
+		"name": "N240",
+		"stats": []
+	},
+	"N241": {
+		"name": "N241",
+		"stats": []
+	},
+	"N242": {
+		"name": "N242",
+		"stats": []
+	},
+	"N243": {
+		"name": "N243",
+		"stats": []
+	},
+	"N244": {
+		"name": "N244",
+		"stats": []
+	},
+	"N245": {
+		"name": "N245",
+		"stats": []
+	},
+	"N246": {
+		"name": "N246",
+		"stats": []
+	},
+	"N247": {
+		"name": "N247",
+		"stats": []
+	},
+	"N248": {
+		"name": "N248",
+		"stats": []
+	},
+	"N249": {
+		"name": "N249",
+		"stats": []
+	},
+	"N250": {
+		"name": "N250",
+		"stats": []
+	},
+	"N251": {
+		"name": "N251",
+		"stats": []
+	},
+	"N252": {
+		"name": "N252",
+		"stats": []
+	},
+	"N253": {
+		"name": "N253",
+		"stats": []
+	},
+	"N254": {
+		"name": "N254",
+		"stats": []
+	},
+	"N255": {
+		"name": "N255",
+		"stats": []
+	},
+	"N256": {
+		"name": "N256",
+		"stats": []
+	},
+	"N257": {
+		"name": "N257",
+		"stats": []
+	},
+	"N258": {
+		"name": "N258",
+		"stats": []
+	},
+	"N259": {
+		"name": "N259",
+		"stats": []
+	},
+	"N260": {
+		"name": "N260",
+		"stats": []
+	},
+	"N261": {
+		"name": "N261",
+		"stats": []
+	},
+	"N262": {
+		"name": "N262",
+		"stats": []
+	},
+	"N263": {
+		"name": "N263",
+		"stats": []
+	},
+	"N264": {
+		"name": "N264",
+		"stats": []
+	},
+	"N265": {
+		"name": "N265",
+		"stats": []
+	},
+	"N266": {
+		"name": "N266",
+		"stats": []
+	},
+	"N267": {
+		"name": "N267",
+		"stats": []
+	},
+	"N268": {
+		"name": "N268",
+		"stats": []
+	},
+	"N269": {
+		"name": "N269",
+		"stats": []
+	},
+	"N270": {
+		"name": "N270",
+		"stats": []
+	},
+	"N271": {
+		"name": "N271",
+		"stats": []
+	},
+	"N272": {
+		"name": "N272",
+		"stats": []
+	},
+	"N273": {
+		"name": "N273",
+		"stats": []
+	},
+	"N274": {
+		"name": "N274",
+		"stats": []
+	},
+	"N275": {
+		"name": "N275",
+		"stats": []
+	},
+	"N276": {
+		"name": "N276",
+		"stats": []
+	},
+	"N277": {
+		"name": "N277",
+		"stats": []
+	},
+	"N278": {
+		"name": "N278",
+		"stats": []
+	},
+	"N279": {
+		"name": "N279",
+		"stats": []
+	},
+	"N280": {
+		"name": "N280",
+		"stats": []
+	},
+	"N281": {
+		"name": "N281",
+		"stats": []
+	},
+	"N282": {
+		"name": "N282",
+		"stats": []
+	},
+	"N283": {
+		"name": "N283",
+		"stats": []
+	},
+	"N284": {
+		"name": "N284",
+		"stats": []
+	},
+	"N285": {
+		"name": "N285",
+		"stats": []
+	},
+	"N286": {
+		"name": "N286",
+		"stats": []
+	},
+	"N287": {
+		"name": "N287",
+		"stats": []
+	},
+	"N288": {
+		"name": "N288",
+		"stats": []
+	},
+	"N289": {
+		"name": "N289",
+		"stats": []
+	},
+	"N290": {
+		"name": "N290",
+		"stats": []
+	},
+	"N291": {
+		"name": "N291",
+		"stats": []
+	},
+	"N292": {
+		"name": "N292",
+		"stats": []
+	},
+	"N293": {
+		"name": "N293",
+		"stats": []
+	},
+	"N294": {
+		"name": "N294",
+		"stats": []
+	},
+	"N295": {
+		"name": "N295",
+		"stats": []
+	},
+	"N296": {
+		"name": "N296",
+		"stats": []
+	},
+	"N297": {
+		"name": "N297",
+		"stats": []
+	},
+	"N298": {
+		"name": "N298",
+		"stats": []
+	},
+	"N299": {
+		"name": "N299",
+		"stats": []
+	},
+	"N300": {
+		"name": "N300",
+		"stats": []
+	},
+	"N301": {
+		"name": "N301",
+		"stats": []
+	},
+	"N302": {
+		"name": "N302",
+		"stats": []
+	},
+	"N303": {
+		"name": "N303",
+		"stats": []
+	},
+	"N304": {
+		"name": "N304",
+		"stats": []
+	},
+	"N305": {
+		"name": "N305",
+		"stats": []
+	},
+	"N306": {
+		"name": "N306",
+		"stats": []
+	},
+	"N307": {
+		"name": "N307",
+		"stats": []
+	},
+	"N308": {
+		"name": "N308",
+		"stats": []
+	},
+	"N309": {
+		"name": "N309",
+		"stats": []
+	},
+	"N310": {
+		"name": "N310",
+		"stats": []
+	},
+	"N311": {
+		"name": "N311",
+		"stats": []
+	},
+	"N312": {
+		"name": "N312",
+		"stats": []
+	},
+	"N313": {
+		"name": "N313",
+		"stats": []
+	},
+	"N314": {
+		"name": "N314",
+		"stats": []
+	},
+	"N315": {
+		"name": "N315",
+		"stats": []
+	},
+	"N316": {
+		"name": "N316",
+		"stats": []
+	},
+	"N317": {
+		"name": "N317",
+		"stats": []
+	},
+	"N318": {
+		"name": "N318",
+		"stats": []
+	},
+	"N319": {
+		"name": "N319",
+		"stats": []
+	},
+	"N320": {
+		"name": "N320",
+		"stats": []
+	},
+	"N321": {
+		"name": "N321",
+		"stats": []
+	},
+	"N322": {
+		"name": "N322",
+		"stats": []
+	},
+	"N323": {
+		"name": "N323",
+		"stats": []
+	},
+	"N324": {
+		"name": "N324",
+		"stats": []
+	},
+	"N325": {
+		"name": "N325",
+		"stats": []
+	},
+	"N326": {
+		"name": "N326",
+		"stats": []
+	},
+	"N327": {
+		"name": "N327",
+		"stats": []
+	},
+	"N328": {
+		"name": "N328",
+		"stats": []
+	},
+	"N329": {
+		"name": "N329",
+		"stats": []
+	},
+	"N330": {
+		"name": "N330",
+		"stats": []
+	},
+	"N331": {
+		"name": "N331",
+		"stats": []
+	},
+	"N332": {
+		"name": "N332",
+		"stats": []
+	},
+	"N333": {
+		"name": "N333",
+		"stats": []
+	},
+	"N334": {
+		"name": "N334",
+		"stats": []
+	},
+	"N335": {
+		"name": "N335",
+		"stats": []
+	},
+	"N336": {
+		"name": "N336",
+		"stats": []
+	},
+	"N337": {
+		"name": "N337",
+		"stats": []
+	},
+	"N338": {
+		"name": "N338",
+		"stats": []
+	},
+	"N339": {
+		"name": "N339",
+		"stats": []
+	},
+	"N340": {
+		"name": "N340",
+		"stats": []
+	},
+	"N341": {
+		"name": "N341",
+		"stats": []
+	},
+	"N342": {
+		"name": "N342",
+		"stats": []
+	},
+	"N343": {
+		"name": "N343",
+		"stats": []
+	},
+	"N344": {
+		"name": "N344",
+		"stats": []
+	},
+	"N345": {
+		"name": "N345",
+		"stats": []
+	},
+	"N346": {
+		"name": "N346",
+		"stats": []
+	},
+	"N347": {
+		"name": "N347",
+		"stats": []
+	},
+	"N348": {
+		"name": "N348",
+		"stats": []
+	},
+	"N349": {
+		"name": "N349",
+		"stats": []
+	},
+	"N350": {
+		"name": "N350",
+		"stats": []
+	},
+	"N351": {
+		"name": "N351",
+		"stats": []
+	},
+	"N352": {
+		"name": "N352",
+		"stats": []
+	},
+	"N353": {
+		"name": "N353",
+		"stats": []
+	},
+	"N354": {
+		"name": "N354",
+		"stats": []
+	},
+	"N355": {
+		"name": "N355",
+		"stats": []
+	},
+	"N356": {
+		"name": "N356",
+		"stats": []
+	},
+	"N357": {
+		"name": "N357",
+		"stats": []
+	},
+	"N358": {
+		"name": "N358",
+		"stats": []
+	},
+	"N359": {
+		"name": "N359",
+		"stats": []
+	},
+	"N360": {
+		"name": "N360",
+		"stats": []
+	},
+	"N361": {
+		"name": "N361",
+		"stats": []
+	},
+	"N362": {
+		"name": "N362",
+		"stats": []
+	},
+	"N363": {
+		"name": "N363",
+		"stats": []
+	},
+	"N364": {
+		"name": "N364",
+		"stats": []
+	},
+	"N365": {
+		"name": "N365",
+		"stats": []
+	},
+	"N366": {
+		"name": "N366",
+		"stats": []
+	},
+	"N367": {
+		"name": "N367",
+		"stats": []
+	},
+	"N368": {
+		"name": "N368",
+		"stats": []
+	},
+	"N369": {
+		"name": "N369",
+		"stats": []
+	},
+	"N370": {
+		"name": "N370",
+		"stats": []
+	},
+	"N371": {
+		"name": "N371",
+		"stats": []
+	},
+	"N372": {
+		"name": "N372",
+		"stats": []
+	},
+	"N373": {
+		"name": "N373",
+		"stats": []
+	},
+	"N374": {
+		"name": "N374",
+		"stats": []
+	},
+	"N375": {
+		"name": "N375",
+		"stats": []
+	},
+	"N376": {
+		"name": "N376",
+		"stats": []
+	},
+	"N377": {
+		"name": "N377",
+		"stats": []
+	},
+	"N378": {
+		"name": "N378",
+		"stats": []
+	},
+	"N379": {
+		"name": "N379",
+		"stats": []
+	},
+	"N380": {
+		"name": "N380",
+		"stats": []
+	},
+	"N381": {
+		"name": "N381",
+		"stats": []
+	},
+	"N382": {
+		"name": "N382",
+		"stats": []
+	},
+	"N383": {
+		"name": "N383",
+		"stats": []
+	},
+	"N384": {
+		"name": "N384",
+		"stats": []
+	},
+	"N385": {
+		"name": "N385",
+		"stats": []
+	},
+	"N386": {
+		"name": "N386",
+		"stats": []
+	},
+	"N387": {
+		"name": "N387",
+		"stats": []
+	},
+	"N388": {
+		"name": "N388",
+		"stats": []
+	},
+	"N389": {
+		"name": "N389",
+		"stats": []
+	},
+	"N390": {
+		"name": "N390",
+		"stats": []
+	},
+	"N391": {
+		"name": "N391",
+		"stats": []
+	},
+	"N392": {
+		"name": "N392",
+		"stats": []
+	},
+	"N393": {
+		"name": "N393",
+		"stats": []
+	},
+	"N394": {
+		"name": "N394",
+		"stats": []
+	},
+	"N395": {
+		"name": "N395",
+		"stats": []
+	},
+	"N396": {
+		"name": "N396",
+		"stats": []
+	},
+	"N397": {
+		"name": "N397",
+		"stats": []
+	},
+	"N398": {
+		"name": "N398",
+		"stats": []
+	},
+	"N399": {
+		"name": "N399",
+		"stats": []
+	},
+	"N400": {
+		"name": "N400",
+		"stats": []
+	},
+	"N401": {
+		"name": "N401",
+		"stats": []
+	},
+	"N402": {
+		"name": "N402",
+		"stats": []
+	},
+	"N403": {
+		"name": "N403",
+		"stats": []
+	},
+	"N404": {
+		"name": "N404",
+		"stats": []
+	},
+	"N405": {
+		"name": "N405",
+		"stats": []
+	},
+	"N406": {
+		"name": "N406",
+		"stats": []
+	},
+	"N407": {
+		"name": "N407",
+		"stats": []
+	},
+	"N408": {
+		"name": "N408",
+		"stats": []
+	},
+	"N409": {
+		"name": "N409",
+		"stats": []
+	},
+	"N410": {
+		"name": "N410",
+		"stats": []
+	},
+	"N411": {
+		"name": "N411",
+		"stats": []
+	},
+	"N412": {
+		"name": "N412",
+		"stats": []
+	},
+	"N413": {
+		"name": "N413",
+		"stats": []
+	},
+	"N414": {
+		"name": "N414",
+		"stats": []
+	},
+	"N415": {
+		"name": "N415",
+		"stats": []
+	},
+	"N416": {
+		"name": "N416",
+		"stats": []
+	},
+	"N417": {
+		"name": "N417",
+		"stats": []
+	},
+	"N418": {
+		"name": "N418",
+		"stats": []
+	},
+	"N419": {
+		"name": "N419",
+		"stats": []
+	},
+	"N420": {
+		"name": "N420",
+		"stats": []
+	},
+	"N421": {
+		"name": "N421",
+		"stats": []
+	},
+	"N422": {
+		"name": "N422",
+		"stats": []
+	},
+	"N423": {
+		"name": "N423",
+		"stats": []
+	},
+	"N424": {
+		"name": "N424",
+		"stats": []
+	},
+	"N425": {
+		"name": "N425",
+		"stats": []
+	},
+	"N426": {
+		"name": "N426",
+		"stats": []
+	},
+	"N427": {
+		"name": "N427",
+		"stats": []
+	},
+	"N428": {
+		"name": "N428",
+		"stats": []
+	},
+	"N429": {
+		"name": "N429",
+		"stats": []
+	},
+	"N430": {
+		"name": "N430",
+		"stats": []
+	},
+	"N431": {
+		"name": "N431",
+		"stats": []
+	},
+	"N432": {
+		"name": "N432",
+		"stats": []
+	},
+	"N433": {
+		"name": "N433",
+		"stats": []
+	},
+	"N434": {
+		"name": "N434",
+		"stats": []
+	},
+	"N435": {
+		"name": "N435",
+		"stats": []
+	},
+	"N436": {
+		"name": "N436",
+		"stats": []
+	},
+	"N437": {
+		"name": "N437",
+		"stats": []
+	},
+	"N438": {
+		"name": "N438",
+		"stats": []
+	},
+	"N439": {
+		"name": "N439",
+		"stats": []
+	},
+	"N440": {
+		"name": "N440",
+		"stats": []
+	},
+	"N441": {
+		"name": "N441",
+		"stats": []
+	},
+	"N442": {
+		"name": "N442",
+		"stats": []
+	},
+	"N443": {
+		"name": "N443",
+		"stats": []
+	},
+	"N444": {
+		"name": "N444",
+		"stats": []
+	},
+	"N445": {
+		"name": "N445",
+		"stats": []
+	},
+	"N446": {
+		"name": "N446",
+		"stats": []
+	},
+	"N447": {
+		"name": "N447",
+		"stats": []
+	},
+	"N448": {
+		"name": "N448",
+		"stats": []
+	},
+	"N449": {
+		"name": "N449",
+		"stats": []
+	},
+	"N450": {
+		"name": "N450",
+		"stats": []
+	},
+	"N451": {
+		"name": "N451",
+		"stats": []
+	},
+	"N452": {
+		"name": "N452",
+		"stats": []
+	},
+	"N453": {
+		"name": "N453",
+		"stats": []
+	},
+	"N454": {
+		"name": "N454",
+		"stats": []
+	},
+	"N455": {
+		"name": "N455",
+		"stats": []
+	},
+	"N456": {
+		"name": "N456",
+		"stats": []
+	},
+	"N457": {
+		"name": "N457",
+		"stats": []
+	},
+	"N458": {
+		"name": "N458",
+		"stats": []
+	},
+	"N459": {
+		"name": "N459",
+		"stats": []
+	},
+	"N460": {
+		"name": "N460",
+		"stats": []
+	},
+	"N461": {
+		"name": "N461",
+		"stats": []
+	},
+	"N462": {
+		"name": "N462",
+		"stats": []
+	},
+	"N463": {
+		"name": "N463",
+		"stats": []
+	},
+	"N464": {
+		"name": "N464",
+		"stats": []
+	},
+	"N465": {
+		"name": "N465",
+		"stats": []
+	},
+	"N466": {
+		"name": "N466",
+		"stats": []
+	},
+	"N467": {
+		"name": "N467",
+		"stats": []
+	},
+	"N468": {
+		"name": "N468",
+		"stats": []
+	},
+	"N469": {
+		"name": "N469",
+		"stats": []
+	},
+	"N470": {
+		"name": "N470",
+		"stats": []
+	},
+	"N471": {
+		"name": "N471",
+		"stats": []
+	},
+	"N472": {
+		"name": "N472",
+		"stats": []
+	},
+	"N473": {
+		"name": "N473",
+		"stats": []
+	},
+	"N474": {
+		"name": "N474",
+		"stats": []
+	},
+	"N475": {
+		"name": "N475",
+		"stats": []
+	},
+	"N476": {
+		"name": "N476",
+		"stats": []
+	},
+	"N477": {
+		"name": "N477",
+		"stats": []
+	},
+	"N478": {
+		"name": "N478",
+		"stats": []
+	},
+	"N479": {
+		"name": "N479",
+		"stats": []
+	},
+	"N480": {
+		"name": "N480",
+		"stats": []
+	},
+	"N481": {
+		"name": "N481",
+		"stats": []
+	},
+	"N482": {
+		"name": "N482",
+		"stats": []
+	},
+	"N483": {
+		"name": "N483",
+		"stats": []
+	},
+	"N484": {
+		"name": "N484",
+		"stats": []
+	},
+	"N485": {
+		"name": "N485",
+		"stats": []
+	},
+	"N486": {
+		"name": "N486",
+		"stats": []
+	},
+	"N487": {
+		"name": "N487",
+		"stats": []
+	},
+	"N488": {
+		"name": "N488",
+		"stats": []
+	},
+	"N489": {
+		"name": "N489",
+		"stats": []
+	},
+	"N490": {
+		"name": "N490",
+		"stats": []
+	},
+	"N491": {
+		"name": "N491",
+		"stats": []
+	},
+	"N492": {
+		"name": "N492",
+		"stats": []
+	},
+	"N493": {
+		"name": "N493",
+		"stats": []
+	},
+	"N494": {
+		"name": "N494",
+		"stats": []
+	},
+	"N495": {
+		"name": "N495",
+		"stats": []
+	},
+	"N496": {
+		"name": "N496",
+		"stats": []
+	},
+	"N497": {
+		"name": "N497",
+		"stats": []
+	},
+	"N498": {
+		"name": "N498",
+		"stats": []
+	},
+	"N499": {
+		"name": "N499",
+		"stats": []
+	},
+	"N500": {
+		"name": "N500",
+		"stats": []
+	},
+	"N501": {
+		"name": "N501",
+		"stats": []
+	},
+	"N502": {
+		"name": "N502",
+		"stats": []
+	},
+	"N503": {
+		"name": "N503",
+		"stats": []
+	},
+	"N504": {
+		"name": "N504",
+		"stats": []
+	},
+	"N505": {
+		"name": "N505",
+		"stats": []
+	},
+	"N506": {
+		"name": "N506",
+		"stats": []
+	},
+	"N507": {
+		"name": "N507",
+		"stats": []
+	},
+	"N508": {
+		"name": "N508",
+		"stats": []
+	},
+	"N509": {
+		"name": "N509",
+		"stats": []
+	},
+	"N510": {
+		"name": "N510",
+		"stats": []
+	},
+	"N511": {
+		"name": "N511",
+		"stats": []
+	},
+	"N512": {
+		"name": "N512",
+		"stats": []
+	},
+	"N513": {
+		"name": "N513",
+		"stats": []
+	},
+	"N514": {
+		"name": "N514",
+		"stats": []
+	},
+	"N515": {
+		"name": "N515",
+		"stats": []
+	},
+	"N516": {
+		"name": "N516",
+		"stats": []
+	},
+	"N517": {
+		"name": "N517",
+		"stats": []
+	},
+	"N518": {
+		"name": "N518",
+		"stats": []
+	},
+	"N519": {
+		"name": "N519",
+		"stats": []
+	},
+	"N520": {
+		"name": "N520",
+		"stats": []
+	},
+	"N521": {
+		"name": "N521",
+		"stats": []
+	},
+	"N522": {
+		"name": "N522",
+		"stats": []
+	},
+	"N523": {
+		"name": "N523",
+		"stats": []
+	},
+	"N524": {
+		"name": "N524",
+		"stats": []
+	},
+	"N525": {
+		"name": "N525",
+		"stats": []
+	},
+	"N526": {
+		"name": "N526",
+		"stats": []
+	},
+	"N527": {
+		"name": "N527",
+		"stats": []
+	},
+	"N528": {
+		"name": "N528",
+		"stats": []
+	},
+	"N529": {
+		"name": "N529",
+		"stats": []
+	},
+	"N530": {
+		"name": "N530",
+		"stats": []
+	},
+	"N531": {
+		"name": "N531",
+		"stats": []
+	},
+	"N532": {
+		"name": "N532",
+		"stats": []
+	},
+	"N533": {
+		"name": "N533",
+		"stats": []
+	},
+	"N534": {
+		"name": "N534",
+		"stats": []
+	},
+	"N535": {
+		"name": "N535",
+		"stats": []
+	},
+	"N536": {
+		"name": "N536",
+		"stats": []
+	},
+	"N537": {
+		"name": "N537",
+		"stats": []
+	},
+	"N538": {
+		"name": "N538",
+		"stats": []
+	},
+	"N539": {
+		"name": "N539",
+		"stats": []
+	},
+	"N540": {
+		"name": "N540",
+		"stats": []
+	},
+	"N541": {
+		"name": "N541",
+		"stats": []
+	},
+	"N542": {
+		"name": "N542",
+		"stats": []
+	},
+	"N543": {
+		"name": "N543",
+		"stats": []
+	},
+	"N544": {
+		"name": "N544",
+		"stats": []
+	},
+	"N545": {
+		"name": "N545",
+		"stats": []
+	},
+	"N546": {
+		"name": "N546",
+		"stats": []
+	},
+	"N547": {
+		"name": "N547",
+		"stats": []
+	},
+	"N548": {
+		"name": "N548",
+		"stats": []
+	},
+	"N549": {
+		"name": "N549",
+		"stats": []
+	},
+	"N550": {
+		"name": "N550",
+		"stats": []
+	},
+	"N551": {
+		"name": "N551",
+		"stats": []
+	},
+	"N552": {
+		"name": "N552",
+		"stats": []
+	},
+	"N553": {
+		"name": "N553",
+		"stats": []
+	},
+	"N554": {
+		"name": "N554",
+		"stats": []
+	},
+	"N555": {
+		"name": "N555",
+		"stats": []
+	},
+	"N556": {
+		"name": "N556",
+		"stats": []
+	},
+	"N557": {
+		"name": "N557",
+		"stats": []
+	},
+	"N558": {
+		"name": "N558",
+		"stats": []
+	},
+	"N559": {
+		"name": "N559",
+		"stats": []
+	},
+	"N560": {
+		"name": "N560",
+		"stats": []
+	},
+	"N561": {
+		"name": "N561",
+		"stats": []
+	},
+	"N562": {
+		"name": "N562",
+		"stats": []
+	},
+	"N563": {
+		"name": "N563",
+		"stats": []
+	},
+	"N564": {
+		"name": "N564",
+		"stats": []
+	},
+	"N565": {
+		"name": "N565",
+		"stats": []
+	},
+	"N566": {
+		"name": "N566",
+		"stats": []
+	},
+	"N567": {
+		"name": "N567",
+		"stats": []
+	},
+	"N568": {
+		"name": "N568",
+		"stats": []
+	},
+	"N569": {
+		"name": "N569",
+		"stats": []
+	},
+	"N570": {
+		"name": "N570",
+		"stats": []
+	},
+	"N571": {
+		"name": "N571",
+		"stats": []
+	},
+	"N572": {
+		"name": "N572",
+		"stats": []
+	},
+	"N573": {
+		"name": "N573",
+		"stats": []
+	}
+}
