@@ -14,34 +14,41 @@
 		stats: string[];
 	}
 
-	let imageEl: HTMLImageElement;
+	let imageEl: HTMLImageElement | null = $state(null);
+	let hasLoaded = $state(false);
 
-	let tooltipContent: TooltipContent | null;
-	let clicked = false;
-	let tooltipX = 0;
-	let tooltipY = 0;
+	let tooltipContent: TooltipContent | null = $state(null);
+	let tooltipHold = $state(false);
+	let tooltipX = $state(0);
+	let tooltipY = $state(0);
 
 	function activateTooltip(node: NodePosition) {
 		tooltipContent = nodesDesc[node.id];
-		console.log(tooltipContent);
+
+		if (!imageEl) return;
 
 		tooltipX = node.x * imageEl.width + 20; // Offset for positioning
 		tooltipY = node.y * imageEl.height - 20;
 	}
 	function handleMousedown(node: NodePosition) {
-		clicked = true;
+		tooltipHold = true;
 		activateTooltip(node);
 	}
 
 	function handleMouseEnter(node: NodePosition) {
 		activateTooltip(node);
-		clicked = false;
+		tooltipHold = false;
 	}
 
 	function handleMouseLeave() {
-		if (!clicked) {
+		if (!tooltipHold) {
 			tooltipContent = null;
 		}
+	}
+
+	function handleImageLoad() {
+		// this is necessary to prevent the nodes being rendered at (0, 0) before the image has loaded
+		hasLoaded = true;
 	}
 </script>
 
@@ -51,34 +58,39 @@
 <p>Check out the Github repository for how to contribute to this project.</p>
 
 <div class="image-container">
-	<img bind:this={imageEl} src="{base}/skill-tree.png" alt="Interactive" />
+	<img bind:this={imageEl} onload={handleImageLoad} src="{base}/skill-tree.png" alt="Interactive" />
 
 	<!-- Display hoverable regions with lighter color -->
-	{#each nodes.notables as node}
-		<div
-			class="notable"
-			style="
+	{#if hasLoaded}
+		<!-- content here -->
+		{#each nodes.notables as node}
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div
+				class="notable"
+				style="
         left: {node.x * imageEl?.width - 10}px;
         top: {node.y * imageEl?.height - 10}px;
       "
-			on:mousedown={() => handleMousedown(node)}
-			on:mouseenter={() => handleMouseEnter(node)}
-			on:mouseleave={handleMouseLeave}
-		></div>
-	{/each}
+				onmousedown={() => handleMousedown(node)}
+				onmouseenter={() => handleMouseEnter(node)}
+				onmouseleave={handleMouseLeave}
+			></div>
+		{/each}
 
-	{#each nodes.keystones as node}
-		<div
-			class="keystone"
-			style="
+		{#each nodes.keystones as node}
+			<!-- svelte-ignore a11y_no_static_element_interactions -->
+			<div
+				class="keystone"
+				style="
         left: {node.x * imageEl?.width - 10}px;
         top: {node.y * imageEl?.height - 10}px;
       "
-			on:mousedown={() => handleMousedown(node)}
-			on:mouseenter={() => handleMouseEnter(node)}
-			on:mouseleave={handleMouseLeave}
-		></div>
-	{/each}
+				onmousedown={() => handleMousedown(node)}
+				onmouseenter={() => handleMouseEnter(node)}
+				onmouseleave={handleMouseLeave}
+			></div>
+		{/each}
+	{/if}
 
 	<!-- Tooltip displayed when a region is hovered -->
 	{#if tooltipContent != null}
