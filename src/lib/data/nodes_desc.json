@@ -60,8 +60,8 @@
 		"stats": []
 	},
 	"K16": {
-		"name": "K16",
-		"stats": []
+		"name": "Avatar of Fire",
+		"stats": ["75% of Damage Converted to Fire Damage", "Deal no Non-Fire Damage"]
 	},
 	"K17": {
 		"name": "K17",
