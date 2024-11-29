@@ -22,9 +22,12 @@
 	let panOffsetY = 0;
 
 	// State for zoom
-	let scale = 1; // Initial zoom level
+	let scale = 0.75; // Initial zoom level (almost fully zoomed out)
 	const minScale = 0.5; // Minimum zoom out level
 	const maxScale = 3; // Maximum zoom in level
+
+	// Base size for nodes
+	const baseNodeSize = 20; // Adjust as needed
 
 	// State for search
 	let searchTerm = '';
@@ -46,12 +49,9 @@
 	}
 
 	function handleMousedown(node: NodePosition | null, event: MouseEvent) {
-		// Prevent default image dragging and text selection
-
 		event.preventDefault();
 
 		if (event.button === 0) {
-			// Left mouse button
 			if (containerEl) {
 				containerEl.focus();
 			}
@@ -77,7 +77,6 @@
 
 	function handleMouseUp(event: MouseEvent) {
 		if (event.button === 0) {
-			// Left mouse button
 			isPanning = false;
 			tooltipHold = false;
 		}
@@ -192,21 +191,39 @@
 	});
 </script>
 
-<div style="padding-left: 16px;">
-	<h1>Path of Exile 2 Skill tree Preview</h1>
+<!-- Top Bar Section -->
+<div class="top-bar">
+	<!-- Moved the GitHub link to the top-right corner -->
+	<div class="github-link">
+		<a href="https://github.com/marcoaaguiar/poe2-tree" target="_blank" rel="noopener noreferrer">
+			<!-- GitHub SVG Icon -->
+			<svg height="32" viewBox="0 0 16 16" width="32" aria-hidden="true">
+				<path
+					fill-rule="evenodd"
+					d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
+                    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+                    0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                    0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.65 7.65 0 012 0c1.53-1.04
+                    2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                    0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+                    0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
+				>
+				</path>
+			</svg>
+		</a>
+	</div>
 
-	<p>Incomplete skill tree preview. Hover over the nodes to see their details.</p>
-	<p>Tip: Click and Drag to pan the skill tree</p>
+	<h1>Path of Exile 2 Skill Tree Preview</h1>
 	<p>Check out the Github repository for how to contribute to this project.</p>
 </div>
 
-<div>
-	<label for="search">Search</label>
+<!-- Search Section -->
+<div class="search-bar">
 	<input type="text" placeholder="Search..." bind:value={searchTerm} />
-
-	<span> > Search results: {searchResults.length}</span>
+	<span>Search results: {searchResults.length}</span>
 </div>
 
+<!-- Skill Tree Container -->
 <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
 <div
 	bind:this={containerEl}
@@ -219,12 +236,12 @@
 	<div
 		class="image-wrapper"
 		style="
-            width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-            height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-            transform: translate({panOffsetX}px, {panOffsetY}px);
-            user-select: none;
-            cursor: {isPanning ? 'grabbing' : 'grab'};
-        "
+                width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+                height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+                transform: translate({panOffsetX}px, {panOffsetY}px);
+                user-select: none;
+                cursor: {isPanning ? 'grabbing' : 'grab'};
+            "
 	>
 		<img
 			bind:this={imageEl}
@@ -233,11 +250,11 @@
 			alt="Interactive"
 			draggable="false"
 			style="
-                pointer-events: none;
-                max-width: none;
-                width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-                height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-            "
+                    pointer-events: none;
+                    max-width: none;
+                    width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+                    height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+                "
 		/>
 
 		<!-- Display hoverable regions with lighter color -->
@@ -251,9 +268,13 @@
 						class:unidentified={nodesDesc[node.id].name === node.id}
 						class:search-result={searchResults.includes(node.id)}
 						style="
-                            left: {node.x * imageEl!.naturalWidth * scale - 10}px;
-                            top: {node.y * imageEl!.naturalHeight * scale - 10}px;
-                        "
+                                width: {baseNodeSize * scale}px;
+                                height: {baseNodeSize * scale}px;
+                                left: {node.x * imageEl!.naturalWidth * scale -
+							(baseNodeSize * scale) / 2}px;
+                                top: {node.y * imageEl!.naturalHeight * scale -
+							(baseNodeSize * scale) / 2}px;
+                            "
 						onmousedown={(event) => handleMousedown(node, event)}
 						onmouseenter={() => handleMouseEnter(node)}
 						onmouseleave={handleMouseLeave}
@@ -275,13 +296,67 @@
 </div>
 
 <style>
+	.top-bar {
+		position: relative;
+		padding: 10px;
+		background-color: #000;
+		color: #fff;
+	}
+
+	.top-bar h1 {
+		margin: 10px 0;
+		font-size: 24px;
+		text-align: center;
+	}
+
+	.top-bar p {
+		margin: 5px 0;
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.github-link {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	.github-link a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.github-link svg {
+		fill: #fff;
+		transition: fill 0.3s;
+	}
+
+	.github-link svg:hover {
+		fill: #4078c0;
+	}
+
+	.search-bar {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.search-bar input {
+		padding: 5px;
+		font-size: 16px;
+	}
+
+	.search-bar span {
+		margin-left: 10px;
+		font-size: 16px;
+	}
+
 	.image-container {
 		position: relative;
-		display: inline-block;
+		display: block;
 		overflow: hidden;
 		outline: none;
 		width: 100vw;
-		height: 80vh;
+		height: calc(100vh - 200px); /* Adjust based on top bar height */
 	}
 
 	.image-wrapper {
@@ -293,13 +368,11 @@
 	.notable,
 	.keystone {
 		position: absolute;
+		border-radius: 50%;
 		pointer-events: auto;
 	}
 
 	.notable {
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
 		background-color: rgba(255, 255, 0, 0.2);
 	}
 
@@ -308,9 +381,6 @@
 	}
 
 	.keystone {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
 		background-color: rgba(100, 255, 100, 0.2);
 	}
 
@@ -318,8 +388,21 @@
 		background-color: rgba(255, 0, 100, 0.2);
 	}
 
+	@keyframes glow {
+		0% {
+			box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+		}
+		50% {
+			box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+		}
+		100% {
+			box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+		}
+	}
+
 	.search-result {
-		border: 2px solid rgba(255, 0, 0, 0.8);
+		border: 4px solid rgba(255, 0, 0, 0.8);
+		animation: glow 2s infinite;
 	}
 
 	.tooltip {
