@@ -18,11 +18,15 @@
 	"K5": {
 		"name": "K5",
 		"stats": []
-	},
-	"K6": {
-		"name": "K6",
-		"stats": []
-	},
+	{
+  "N152": {
+    "name": "Ancestral Bond",
+    "stats": [
+      "Unlimited number of Summoned Totem,
+      "Totem reserve 100 Spirit each"
+    ]
+  }
+}
 	"K7": {
 		"name": "K7",
 		"stats": []
