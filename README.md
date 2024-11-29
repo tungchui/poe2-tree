@@ -28,7 +28,7 @@ Example:
 {
   ...
   "N152": {
-    "name"": "Name of the node",
+    "name": "Name of the node",
     "stats": [
       "First line of stats",
       "Second line of stats"
