@@ -1,6 +1,7 @@
 <script lang="ts">
 	import nodes from '/src/data/nodes.json';
 	import nodesDesc from '/src/data/nodes_desc.json';
+	import { base } from '$app/paths';
 
 	interface NodePosition {
 		x: number;
@@ -50,7 +51,7 @@
 <p>Check out the Github repository for how to contribute to this project.</p>
 
 <div class="image-container">
-	<img bind:this={imageEl} src="/skill-tree.png" alt="Interactive" />
+	<img bind:this={imageEl} src="{base}/skill-tree.png" alt="Interactive" />
 
 	<!-- Display hoverable regions with lighter color -->
 	{#each nodes.notables as node}
