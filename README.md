@@ -59,7 +59,7 @@ The UI/UX is quite basic and can be improved in many ways, if you have any ideas
 ## Dreamcore Youtube
 
 - [Int/Dex Area](https://www.youtube.com/watch?v=aTi9fF6fU24)
-- [Dex Area]()
-- [Dex/Str Area]()
-- [Str Area]()
+- [Dex Area](https://www.youtube.com/watch?v=WmAI31iog94)
+- [Dex/Str Area](https://www.youtube.com/watch?v=YOQlMiDNpyQ)
+- [Str Area](https://www.youtube.com/watch?v=yPh98i0-oHs)
 - [Str/Int Area](https://www.youtube.com/watch?v=XfriM2XvruQb)
