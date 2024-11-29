@@ -12,20 +12,27 @@
 		"stats": ["Converts all Energy Shield to Mana"]
 	},
 	"K4": {
-		"name": "K4",
-		"stats": []
+		"name": "Chaos Inoculation",
+		"stats": [
+			"Maximum Life becomes 1, Immune to Chaos Damage"
+		]
 	},
 	"K5": {
-		"name": "K5",
-		"stats": []
+		"name": "Conduit",
+		"stats": [
+			"If you would gain a Charge, Allies in your Presence gain that Charge instead"
+		]
 	},
 	"K6": {
 		"name": "Ancestral Bond",
 		"stats": ["Unlimited number of Summoned Totems", "Totems reserve 100 Spirit each"]
 	},
 	"K7": {
-		"name": "K7",
-		"stats": []
+		"name": "Mind Over Matter",
+		"stats": [
+			"All Damage is taken from Mana before Life",
+			"50% less Mana Recovery Rate"
+		]
 	},
 	"K8": {
 		"name": "Zealot's Oath",
@@ -35,16 +42,26 @@
 		]
 	},
 	"K9": {
-		"name": "K9",
-		"stats": []
+		"name": "Resonance",
+		"stats": [
+			"Gain Power Charges instead of Frenzy Charges",
+			"Gain Frenzy Charges instead of Endurance Charges",
+			"Gain Endurance Charges instead of Power Charges"
+		]
 	},
 	"K10": {
-		"name": "K10",
-		"stats": []
+		"name": "Eternal Youth",
+		"stats": [
+			"Life Recharges instead of Energy Shield",
+			"Life Recovery from Flasks applies to Energy Shield instead"
+		]
 	},
 	"K11": {
-		"name": "K11",
-		"stats": []
+		"name": "Pain Attunement",
+		"stats": [
+			"30% less Critical Damage Bonus when on Full Life",
+			"30% more Critical Damage Bonus when on Low Life"
+		]
 	},
 	"K12": {
 		"name": "Heartstopper",
@@ -54,8 +71,11 @@
 		]
 	},
 	"K13": {
-		"name": "K13",
-		"stats": []
+		"name": "Bloodmagic",
+		"stats": [
+			"Removes all Mana",
+			"Skills Cost Life instead of Mana"
+		]
 	},
 	"K14": {
 		"name": "Acrobatics",
@@ -65,8 +85,11 @@
 		]
 	},
 	"K15": {
-		"name": "K15",
-		"stats": []
+		"name": "Resolute Technique",
+		"stats": [
+			"Your Hits can´t be Evaded",
+			"Never deal Critical Hits"
+		]
 	},
 	"K16": {
 		"name": "Avatar of Fire",
@@ -88,8 +111,11 @@
 		]
 	},
 	"K19": {
-		"name": "K19",
-		"stats": []
+		"name": "Unwavering Stance",
+		"stats": [
+			"Your Stun Threshold is doubled",
+			"Cannot Dodge Roll"
+		]
 	},
 	"K20": {
 		"name": "Giant's Blood",
@@ -103,12 +129,24 @@
 		]
 	},
 	"K22": {
-		"name": "K22",
-		"stats": []
+		"name": "Vaal Pact",
+		"stats": [
+			"Life Leech is Instant",
+			"Cannot use Life Flasks"
+		]
 	},
 	"K23": {
-		"name": "K23",
-		"stats": []
+		"name": "Iron Reflexes",
+		"stats": [
+			"Converts all Evasion Rating to Armour"
+		]
+	},
+	"K24": {
+		"name": "Bulwark",
+		"stats": [
+			"Dodge Roll cannot Avoid Damage",
+			"Take 30% less Damage from Hits while Dodge Rolling"
+		]
 	},
 	"N1": {
 		"name": "N1",
