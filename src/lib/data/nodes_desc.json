@@ -35,12 +35,19 @@
 		]
 	},
 	"K9": {
-		"name": "K9",
-		"stats": []
+		"name": "Resonance",
+		"stats": [
+			"Gain Power Charges instead of Frenzy Charges",
+			"Gain Frenzy Charges instead of Endurance Charges",
+			"Gain Endurance Charges instead of Power Charges"
+		]
 	},
 	"K10": {
-		"name": "K10",
-		"stats": []
+		"name": "Eternal Youth",
+		"stats": [
+			"Life Recharges instead of Energy Shield",
+			"Life Recovery from Flasks applies to Energy Shield instead"
+		]
 	},
 	"K11": {
 		"name": "K11",
@@ -599,8 +606,10 @@
 		"stats": []
 	},
 	"N117": {
-		"name": "N117",
-		"stats": []
+		"name": "Spectral Ward",
+		"stats": [
+			"+1 to Maximum Energy Shield per 12 Evasion Rating on Equipped Body Armour"
+		]
 	},
 	"N118": {
 		"name": "Self Mortification",
@@ -642,8 +651,14 @@
 		"stats": []
 	},
 	"N127": {
-		"name": "N127",
-		"stats": []
+		"name": "Spaghettification",
+		"stats": [
+			"3% increased Movement Speed",
+			"29% increased Chaos Damage",
+			"-13% to Chaos Resistance",
+			"23% reduced Light Radius",
+			"7% increased attributes"
+		]
 	},
 	"N128": {
 		"name": "N128",
@@ -658,8 +673,11 @@
 		"stats": []
 	},
 	"N131": {
-		"name": "N131",
-		"stats": []
+		"name": "Slippery Ice",
+		"stats": [
+			"25% reduced Effect of Chill on you",
+			"Unaffected by Chill during Dodge Roll"
+		]
 	},
 	"N132": {
 		"name": "N132",
@@ -874,8 +892,10 @@
 		"stats": []
 	},
 	"N183": {
-		"name": "N183",
-		"stats": []
+		"name": "Wild Storm",
+		"stats": [
+			"15% more Maximum Lightning Damage"
+		]
 	},
 	"N184": {
 		"name": "N184",
@@ -1316,8 +1336,11 @@
 		"stats": []
 	},
 	"N290": {
-		"name": "N290",
-		"stats": []
+		"name": "Heartstopper",
+		"stats": [
+			"Take 75% less Damage over Time if you've started taking Damage over Time in the past second",
+			"Take 50% more Damage over Time if you haven't started taking Damage over Time in the past second"
+		]
 	},
 	"N291": {
 		"name": "N291",
@@ -1647,8 +1670,11 @@
 		"stats": []
 	},
 	"N371": {
-		"name": "N371",
-		"stats": []
+		"name": "Unbending",
+		"stats": [
+			"3% increated Maximum Life",
+			"30% increated Stun Threshold"
+		]
 	},
 	"N372": {
 		"name": "N372",
@@ -1803,8 +1829,10 @@
 		"stats": []
 	},
 	"N410": {
-		"name": "N410",
-		"stats": []
+		"name": "Skullcrusher",
+		"stats": [
+			"20% more Damage against Heavy Stunned Enemies with Maces"
+		]
 	},
 	"N411": {
 		"name": "N411",
@@ -1847,8 +1875,11 @@
 		"stats": []
 	},
 	"N421": {
-		"name": "N421",
-		"stats": []
+		"name": "Made to Last",
+		"stats": [
+			"0.5% of Physical Damage prevented from Hits in the past",
+			"10 seconds is Regenerated as Life pre second"
+		]
 	},
 	"N422": {
 		"name": "N422",
@@ -1984,8 +2015,10 @@
 		"stats": []
 	},
 	"N454": {
-		"name": "N454",
-		"stats": []
+		"name": "Heatproofing",
+		"stats": [
+			"25% of Armour also applies to Fire Damage taken from Hits"
+		]
 	},
 	"N455": {
 		"name": "Quick-change Act",
@@ -2082,8 +2115,10 @@
 		"stats": []
 	},
 	"N477": {
-		"name": "N477",
-		"stats": []
+		"name": "Spike Pit",
+		"stats": [
+			"Jagged Ground you create applies 10% increated Damage taken to Enemies"
+		]
 	},
 	"N478": {
 		"name": "N478",
@@ -2248,8 +2283,10 @@
 		"stats": []
 	},
 	"N517": {
-		"name": "N517",
-		"stats": []
+		"name": "Unnatural Resilience",
+		"stats": [
+			"2% to Maximum fire Resistance for each 40% Uncapped Fire Resistance"
+		]
 	},
 	"N518": {
 		"name": "N518",
