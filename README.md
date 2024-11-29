@@ -2,7 +2,7 @@
 
 This is a scuffed version of the Path of Exile 2 skill tree with data extracted from videos and screenshots. It's a community project so feel free to contribute.
 
-# Contribute
+# Contributing
 
 If you want to contribute to the project there are a few ways to help
 
@@ -12,7 +12,7 @@ If you want to contribute to the project there are a few ways to help
 
 ## Finding new sources
 
-If you found a new source that is not listed here, please open an issue with the link to the video or screenshot.
+If you found a new source that is not listed on this README as mapped or is up for mapping on the issues, please open an issue with the link to the video or screenshot.
 
 ## Transcribing nodes
 
@@ -63,26 +63,3 @@ The UI/UX is quite basic and can be improved in many ways, if you have any ideas
 - [Dex/Str Area](https://www.youtube.com/watch?v=6zj3X3Zw8W4)
 - [Str Area](https://www.youtube.com/watch?v=6zj3X3Zw8W4)
 - [Str/Int Area](https://www.youtube.com/watch?v=6zj3X3Zw8W4)
-
-## For Developers
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-### Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
