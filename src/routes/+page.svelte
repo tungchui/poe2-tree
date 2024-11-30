@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { type NodePosition, type TooltipContent, loadData } from '$lib';
-	import { onMount } from 'svelte';
+	import { onMount, tick } from 'svelte';
 
 	let { positions: nodes, nodesDescription: nodesDesc } = loadData();
 
 	let containerEl: HTMLDivElement | null = null;
 	let imageEl: HTMLImageElement | null = null;
+	let imageWrapperEl: HTMLDivElement | null = null; // Reference to the image wrapper
+	let tooltipEl: HTMLDivElement | null = null; // Reference to the tooltip element
 	let hasLoaded = false;
 
 	let tooltipContent: TooltipContent | null = null;
-	let tooltipHold = false;
 	let tooltipX = 0;
 	let tooltipY = 0;
 
@@ -44,16 +45,48 @@
 	// Reactive statement for search
 	$: handleSearch(searchTerm);
 
-	function activateTooltip(node: NodePosition) {
+	async function activateTooltip(node: NodePosition) {
 		tooltipContent = nodesDesc[node.id];
 
-		if (!imageEl) return;
+		if (!imageEl || !containerEl) return;
 
-		const nodeX = node.x * imageEl!.naturalWidth * scale;
-		const nodeY = node.y * imageEl!.naturalHeight * scale;
+		// Calculate node position relative to the container, accounting for pan offsets
+		const nodeX = node.x * imageEl.naturalWidth * scale + panOffsetX;
+		const nodeY = node.y * imageEl.naturalHeight * scale + panOffsetY;
 
-		tooltipX = nodeX + 20; // Corrected position
-		tooltipY = nodeY - 20; // Corrected position
+		// Initial tooltip position
+		tooltipX = nodeX + 20; // Adjust as needed
+		tooltipY = nodeY - 20;
+
+		await tick(); // Wait for the tooltip to render
+
+		if (tooltipEl && containerEl) {
+			const tooltipRect = tooltipEl.getBoundingClientRect();
+			const containerRect = containerEl.getBoundingClientRect();
+
+			// Compute tooltip position relative to container
+			const tooltipLeftInContainer = tooltipRect.left - containerRect.left;
+			const tooltipRightInContainer = tooltipLeftInContainer + tooltipRect.width;
+			const tooltipTopInContainer = tooltipRect.top - containerRect.top;
+			const tooltipBottomInContainer = tooltipTopInContainer + tooltipRect.height;
+
+			// Adjust positions to keep tooltip within container
+			if (tooltipRightInContainer > containerRect.width) {
+				tooltipX -= tooltipRightInContainer - containerRect.width + 20;
+			}
+
+			if (tooltipLeftInContainer < 0) {
+				tooltipX += -tooltipLeftInContainer + 20;
+			}
+
+			if (tooltipBottomInContainer > containerRect.height) {
+				tooltipY -= tooltipBottomInContainer - containerRect.height + 20;
+			}
+
+			if (tooltipTopInContainer < 0) {
+				tooltipY += -tooltipTopInContainer + 20;
+			}
+		}
 	}
 
 	function handleContainerMousedown(event: MouseEvent) {
@@ -91,7 +124,6 @@
 	function handleMouseUp(event: MouseEvent) {
 		if (event.button === 0) {
 			isPanning = false;
-			tooltipHold = false;
 		}
 	}
 
@@ -102,7 +134,7 @@
 	}
 
 	function handleMouseLeave() {
-		if (!tooltipHold && !isPanning) {
+		if (!isPanning) {
 			tooltipContent = null;
 		}
 	}
@@ -138,8 +170,8 @@
 		hasLoaded = true;
 
 		if (imageEl && containerEl) {
-			const imageWidth = imageEl!.naturalWidth * scale;
-			const imageHeight = imageEl!.naturalHeight * scale;
+			const imageWidth = imageEl.naturalWidth * scale;
+			const imageHeight = imageEl.naturalHeight * scale;
 			const containerWidth = containerEl.clientWidth;
 			const containerHeight = containerEl.clientHeight;
 
@@ -167,8 +199,8 @@
 
 	function clampPanOffsets() {
 		if (imageEl && containerEl) {
-			const scaledWidth = imageEl!.naturalWidth * scale;
-			const scaledHeight = imageEl!.naturalHeight * scale;
+			const scaledWidth = imageEl.naturalWidth * scale;
+			const scaledHeight = imageEl.naturalHeight * scale;
 			const containerWidth = containerEl.clientWidth;
 			const containerHeight = containerEl.clientHeight;
 
@@ -254,14 +286,15 @@
 	onwheel={handleWheel}
 >
 	<div
+		bind:this={imageWrapperEl}
 		class="image-wrapper"
 		style="
-				  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-				  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-				  transform: translate({panOffsetX}px, {panOffsetY}px);
-				  user-select: none;
-				  cursor: {isPanning ? 'grabbing' : 'grab'};
-			  "
+			  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+			  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+			  transform: translate({panOffsetX}px, {panOffsetY}px);
+			  user-select: none;
+			  cursor: {isPanning ? 'grabbing' : 'grab'};
+		  "
 	>
 		<img
 			bind:this={imageEl}
@@ -270,11 +303,11 @@
 			alt="Interactive"
 			draggable="false"
 			style="
-					  pointer-events: none;
-					  max-width: none;
-					  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
-					  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
-				  "
+				  pointer-events: none;
+				  max-width: none;
+				  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+				  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+			  "
 		/>
 
 		<!-- Display hoverable regions with lighter color -->
@@ -295,8 +328,8 @@
 							style="
 								  width: {baseNodeSize * scale}px;
 								  height: {baseNodeSize * scale}px;
-								  left: {node.x * imageEl!.naturalWidth * scale - (baseNodeSize * scale) / 2}px;
-								  top: {node.y * imageEl!.naturalHeight * scale - (baseNodeSize * scale) / 2}px;
+								  left: {node.x * imageEl.naturalWidth * scale - (baseNodeSize * scale) / 2}px;
+								  top: {node.y * imageEl.naturalHeight * scale - (baseNodeSize * scale) / 2}px;
 							  "
 							onmousedown={(event) => event.stopPropagation()}
 							onclick={() => toggleNodeSelection(node)}
@@ -307,17 +340,17 @@
 				{/each}
 			{/each}
 		{/if}
-
-		<!-- Tooltip displayed when a region is hovered -->
-		{#if tooltipContent != null}
-			<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
-				<div class="title">{tooltipContent.name}</div>
-				{#each tooltipContent.stats as stat}
-					<div class="body">{stat}</div>
-				{/each}
-			</div>
-		{/if}
 	</div>
+
+	<!-- Tooltip displayed when a region is hovered -->
+	{#if tooltipContent != null}
+		<div bind:this={tooltipEl} class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
+			<div class="title">{tooltipContent.name}</div>
+			{#each tooltipContent.stats as stat}
+				<div class="body">{stat}</div>
+			{/each}
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -389,7 +422,7 @@
 	}
 
 	.image-container {
-		position: relative;
+		position: relative; 
 		display: block;
 		overflow: hidden;
 		outline: none;
@@ -427,11 +460,11 @@
 	}
 
 	.notable.selected {
-		background-color: rgba(255, 255, 0, 0.6);
+		background-color: rgba(255, 255, 0, 0.8);
 	}
 
 	.keystone.selected {
-		background-color: rgba(0, 255, 0, 0.6);
+		background-color: rgba(0, 255, 0, 0.8);
 	}
 
 	.highlighted-keystone {
@@ -460,7 +493,7 @@
 	}
 
 	.tooltip {
-		position: absolute;
+		position: absolute; /* Position relative to .image-container */
 		background-color: black;
 		color: white;
 		font-family: 'Georgia', serif;
@@ -468,6 +501,8 @@
 		padding: 20px;
 		max-width: 400px;
 		border-radius: 5px;
+		z-index: 1000; /* Ensure tooltip appears above other elements */
+		pointer-events: none; /* Allow clicks to pass through the tooltip */
 	}
 
 	.tooltip .title {
