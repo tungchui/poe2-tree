@@ -1506,8 +1506,8 @@
 		"stats": []
 	},
 	"N326": {
-		"name": "N326",
-		"stats": []
+		"name": "Admonisher",
+		"stats": ["25% increased Warcry Speed", "25% increased Warcry Cooldown Recovery Rate"]
 	},
 	"N327": {
 		"name": "Reverberating Impact",
