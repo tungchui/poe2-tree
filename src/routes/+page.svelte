@@ -108,7 +108,9 @@
 	<!-- Tooltip displayed when a region is hovered -->
 	{#if tooltipContent != null}
 		<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
-			<div class="title">{tooltipContent.name}</div>
+			<div class="title" style="background-image: ('$app/tooltip-header.png')">
+				{tooltipContent.name}
+			</div>
 			<div class="body">
 				{#each tooltipContent.stats as stat}
 					<p class="stat-line">{stat}</p>
