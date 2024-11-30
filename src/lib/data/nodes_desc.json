@@ -1907,8 +1907,8 @@
 		"stats": []
 	},
 	"N418": {
-		"name": "N418",
-		"stats": []
+		"name": "Prolonged Fury",
+		"stats": ["Inherent loss of Rage is 25% slower"]
 	},
 	"N419": {
 		"name": "N419",
