@@ -1450,8 +1450,8 @@
 		"stats": []
 	},
 	"N312": {
-		"name": "N312",
-		"stats": []
+		"name": "Brutal",
+		"stats": ["10% increased Stun Buildup", "10% increased Melee Damage", "+10 to Strength"]
 	},
 	"N313": {
 		"name": "N313",
