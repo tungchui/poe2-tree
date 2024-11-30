@@ -1863,8 +1863,8 @@
 		]
 	},
 	"N407": {
-		"name": "N407",
-		"stats": []
+		"name": "Heavy Armour",
+		"stats": ["100% of Strength Requirements from Boots, Gloves and Helmets also added to Armour"]
 	},
 	"N408": {
 		"name": "N408",
