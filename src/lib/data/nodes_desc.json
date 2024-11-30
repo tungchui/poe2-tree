@@ -12,20 +12,27 @@
 		"stats": ["Converts all Energy Shield to Mana"]
 	},
 	"K4": {
-		"name": "K4",
-		"stats": []
+		"name": "Chaos Inoculation",
+		"stats": [
+			"Maximum Life becomes 1, Immune to Chaos Damage"
+		]
 	},
 	"K5": {
-		"name": "K5",
-		"stats": []
+		"name": "Conduit",
+		"stats": [
+			"If you would gain a Charge, Allies in your Presence gain that Charge instead"
+		]
 	},
 	"K6": {
 		"name": "Ancestral Bond",
 		"stats": ["Unlimited number of Summoned Totems", "Totems reserve 100 Spirit each"]
 	},
 	"K7": {
-		"name": "K7",
-		"stats": []
+		"name": "Mind Over Matter",
+		"stats": [
+			"All Damage is taken from Mana before Life",
+			"50% less Mana Recovery Rate"
+		]
 	},
 	"K8": {
 		"name": "Zealot's Oath",
@@ -35,16 +42,26 @@
 		]
 	},
 	"K9": {
-		"name": "K9",
-		"stats": []
+		"name": "Resonance",
+		"stats": [
+			"Gain Power Charges instead of Frenzy Charges",
+			"Gain Frenzy Charges instead of Endurance Charges",
+			"Gain Endurance Charges instead of Power Charges"
+		]
 	},
 	"K10": {
-		"name": "K10",
-		"stats": []
+		"name": "Eternal Youth",
+		"stats": [
+			"Life Recharges instead of Energy Shield",
+			"Life Recovery from Flasks applies to Energy Shield instead"
+		]
 	},
 	"K11": {
-		"name": "K11",
-		"stats": []
+		"name": "Pain Attunement",
+		"stats": [
+			"30% less Critical Damage Bonus when on Full Life",
+			"30% more Critical Damage Bonus when on Low Life"
+		]
 	},
 	"K12": {
 		"name": "Heartstopper",
@@ -54,8 +71,11 @@
 		]
 	},
 	"K13": {
-		"name": "K13",
-		"stats": []
+		"name": "Bloodmagic",
+		"stats": [
+			"Removes all Mana",
+			"Skills Cost Life instead of Mana"
+		]
 	},
 	"K14": {
 		"name": "Acrobatics",
@@ -65,8 +85,11 @@
 		]
 	},
 	"K15": {
-		"name": "K15",
-		"stats": []
+		"name": "Resolute Technique",
+		"stats": [
+			"Your Hits can´t be Evaded",
+			"Never deal Critical Hits"
+		]
 	},
 	"K16": {
 		"name": "Avatar of Fire",
@@ -88,8 +111,11 @@
 		]
 	},
 	"K19": {
-		"name": "K19",
-		"stats": []
+		"name": "Unwavering Stance",
+		"stats": [
+			"Your Stun Threshold is doubled",
+			"Cannot Dodge Roll"
+		]
 	},
 	"K20": {
 		"name": "Giant's Blood",
@@ -103,16 +129,28 @@
 		]
 	},
 	"K22": {
-		"name": "K22",
-		"stats": []
+		"name": "Vaal Pact",
+		"stats": [
+			"Life Leech is Instant",
+			"Cannot use Life Flasks"
+		]
 	},
 	"K23": {
-		"name": "K23",
-		"stats": []
+		"name": "Iron Reflexes",
+		"stats": [
+			"Converts all Evasion Rating to Armour"
+		]
+	},
+	"K24": {
+		"name": "Bulwark",
+		"stats": [
+			"Dodge Roll cannot Avoid Damage",
+			"Take 30% less Damage from Hits while Dodge Rolling"
+		]
 	},
 	"N1": {
-		"name": "N1",
-		"stats": []
+		"name": "Pure Power",
+		"stats": ["2% increased Lightning Damage per 10 Intelligence"]
 	},
 	"N2": {
 		"name": "N2",
@@ -212,8 +250,8 @@
 		"stats": []
 	},
 	"N24": {
-		"name": "N24",
-		"stats": []
+		"name": "Energise",
+		"stats": ["35% chance for Trigger skills to refund half of Energy Spent"]
 	},
 	"N25": {
 		"name": "Eldritch Will",
@@ -551,8 +589,12 @@
 		"stats": ["24% chance for Spell Skills to fire 2 additional Projectiles"]
 	},
 	"N105": {
-		"name": "N105",
-		"stats": []
+		"name": "Inner Faith",
+		"stats": [
+			"20% increased Evasion Rating",
+			"20% increased maximum Energy Shield",
+			"25% reduced Effect of Curses on you"
+		]
 	},
 	"N106": {
 		"name": "N106",
@@ -599,8 +641,10 @@
 		"stats": []
 	},
 	"N117": {
-		"name": "N117",
-		"stats": []
+		"name": "Spectral Ward",
+		"stats": [
+			"+1 to Maximum Energy Shield per 12 Evasion Rating on Equipped Body Armour"
+		]
 	},
 	"N118": {
 		"name": "Self Mortification",
@@ -642,8 +686,14 @@
 		"stats": []
 	},
 	"N127": {
-		"name": "N127",
-		"stats": []
+		"name": "Spaghettification",
+		"stats": [
+			"3% increased Movement Speed",
+			"29% increased Chaos Damage",
+			"-13% to Chaos Resistance",
+			"23% reduced Light Radius",
+			"7% increased attributes"
+		]
 	},
 	"N128": {
 		"name": "N128",
@@ -658,8 +708,11 @@
 		"stats": []
 	},
 	"N131": {
-		"name": "N131",
-		"stats": []
+		"name": "Slippery Ice",
+		"stats": [
+			"25% reduced Effect of Chill on you",
+			"Unaffected by Chill during Dodge Roll"
+		]
 	},
 	"N132": {
 		"name": "N132",
@@ -874,8 +927,10 @@
 		"stats": []
 	},
 	"N183": {
-		"name": "N183",
-		"stats": []
+		"name": "Wild Storm",
+		"stats": [
+			"15% more Maximum Lightning Damage"
+		]
 	},
 	"N184": {
 		"name": "N184",
@@ -926,8 +981,8 @@
 		"stats": ["29% increased Chaos Damage", "10% increased Global Defences"]
 	},
 	"N195": {
-		"name": "N195",
-		"stats": []
+		"name": "Briny Carapace",
+		"stats": ["60% increased Stun Threshold for each time you've been Stunned Recently"]
 	},
 	"N196": {
 		"name": "N196",
@@ -1264,8 +1319,11 @@
 		"stats": []
 	},
 	"N277": {
-		"name": "N277",
-		"stats": []
+		"name": "Siphon",
+		"stats": [
+			"Recover 2% of Mana on Kill",
+			"25% increased amount of Mana Leeched"
+		]
 	},
 	"N278": {
 		"name": "N278",
@@ -1284,16 +1342,20 @@
 		"stats": []
 	},
 	"N282": {
-		"name": "N282",
-		"stats": []
+		"name": "Manifold Method",
+		"stats": [
+			"50% increased amount of Mana Leeched",
+			"30% increased chance to inflict Ailments against Rare or Unique Enemies"
+		]
 	},
 	"N283": {
 		"name": "N283",
 		"stats": []
 	},
 	"N284": {
-		"name": "N284",
-		"stats": []
+		"name": "One with the Storm",
+		"stats": [
+			"Querterstaff Skills that consume Power Charges count as consuming an additional Power Charge"]
 	},
 	"N285": {
 		"name": "N285",
@@ -1316,8 +1378,11 @@
 		"stats": []
 	},
 	"N290": {
-		"name": "N290",
-		"stats": []
+		"name": "Heartstopper",
+		"stats": [
+			"Take 75% less Damage over Time if you've started taking Damage over Time in the past second",
+			"Take 50% more Damage over Time if you haven't started taking Damage over Time in the past second"
+		]
 	},
 	"N291": {
 		"name": "N291",
@@ -1647,8 +1712,11 @@
 		"stats": []
 	},
 	"N371": {
-		"name": "N371",
-		"stats": []
+		"name": "Unbending",
+		"stats": [
+			"3% increased Maximum Life",
+			"30% increased Stun Threshold"
+		]
 	},
 	"N372": {
 		"name": "N372",
@@ -1803,8 +1871,10 @@
 		"stats": []
 	},
 	"N410": {
-		"name": "N410",
-		"stats": []
+		"name": "Skullcrusher",
+		"stats": [
+			"20% more Damage against Heavy Stunned Enemies with Maces"
+		]
 	},
 	"N411": {
 		"name": "N411",
@@ -1847,8 +1917,11 @@
 		"stats": []
 	},
 	"N421": {
-		"name": "N421",
-		"stats": []
+		"name": "Made to Last",
+		"stats": [
+			"0.5% of Physical Damage prevented from Hits in the past",
+			"10 seconds is Regenerated as Life per second"
+		]
 	},
 	"N422": {
 		"name": "N422",
@@ -1984,8 +2057,10 @@
 		"stats": []
 	},
 	"N454": {
-		"name": "N454",
-		"stats": []
+		"name": "Heatproofing",
+		"stats": [
+			"25% of Armour also applies to Fire Damage taken from Hits"
+		]
 	},
 	"N455": {
 		"name": "Quick-change Act",
@@ -2082,8 +2157,8 @@
 		"stats": []
 	},
 	"N477": {
-		"name": "N477",
-		"stats": []
+		"name": "Spike Pit",
+		"stats": ["Jagged Ground you create applies 10% increased Damage taken to Enemies"]
 	},
 	"N478": {
 		"name": "N478",
@@ -2248,8 +2323,10 @@
 		"stats": []
 	},
 	"N517": {
-		"name": "N517",
-		"stats": []
+		"name": "Unnatural Resilience",
+		"stats": [
+			"2% to Maximum fire Resistance for each 40% Uncapped Fire Resistance"
+		]
 	},
 	"N518": {
 		"name": "N518",

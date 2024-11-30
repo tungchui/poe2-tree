@@ -345,10 +345,14 @@
 	<!-- Tooltip displayed when a region is hovered -->
 	{#if tooltipContent != null}
 		<div bind:this={tooltipEl} class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
-			<div class="title">{tooltipContent.name}</div>
-			{#each tooltipContent.stats as stat}
-				<div class="body">{stat}</div>
-			{/each}
+			<div class="title" style={`background-image: url('${base}/tooltip-header.png');`}>
+				{tooltipContent.name}
+			</div>
+			<div class="body">
+				{#each tooltipContent.stats as stat}
+					<p class="stat-line">{stat}</p>
+				{/each}
+			</div>
 		</div>
 	{/if}
 </div>
@@ -493,32 +497,44 @@
 	}
 
 	.tooltip {
-		position: absolute; /* Position relative to .image-container */
-		background-color: black;
-		color: white;
-		font-family: 'Georgia', serif;
-		border: 2px solid #ffffff;
-		padding: 20px;
+		position: absolute;
+		min-width: 300px;
 		max-width: 400px;
-		border-radius: 5px;
+		border-radius: 8px;
+		background-color: black; /* Slightly lighter background for the box */
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
+		opacity: 0.9;
 		z-index: 1000; /* Ensure tooltip appears above other elements */
 		pointer-events: none; /* Allow clicks to pass through the tooltip */
-	}
 
-	.tooltip .title {
-		font-family: 'Fontin SmallCaps', sans-serif;
-		font-size: 24px;
-		font-weight: bold;
-		text-align: center;
-		color: #e4dfd7;
-		margin-bottom: 15px;
-	}
 
-	.tooltip .body {
-		font-family: 'Fontin SmallCaps', sans-serif;
-		font-size: 16px;
-		line-height: 1.5;
-		color: #7d7aad;
-		margin-bottom: 15px;
+		/* Title style */
+		.title {
+			font-size: 1.5rem;
+			color: #f0e7e5; /* Light gold for the title text */
+			text-align: center;
+			margin-bottom: 15px;
+			background-size: cover; /* Ensure the image covers the entire title area */
+			background-position: center; /* Center the background image */
+			border-radius: 8px; /* Rounded corners */
+			padding: 10px 0; /* Space inside the title */
+			text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Subtle glow effect */
+			display: inline-block; /* Shrinks to fit the content */
+			width: 100%; /* Adjust to content size */
+		}
+
+		/* Body text style */
+		.body {
+			font-family: 'Fontin SmallCaps', sans-serif;
+			font-size: 16px;
+			line-height: 1.5; /* Improve readability */
+			color: #7d7aad; /* Light blue for body text */
+			margin-bottom: 15px; /* Spacing below body */
+			padding: 10px 20px;
+
+			.stat-line {
+				margin: 0 auto;
+			}
+		}
 	}
 </style>
