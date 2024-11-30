@@ -149,8 +149,8 @@
 		]
 	},
 	"N1": {
-		"name": "N1",
-		"stats": []
+		"name": "Pure Power",
+		"stats": ["2% increased Lightning Damage per 10 Intelligence"]
 	},
 	"N2": {
 		"name": "N2",
@@ -251,9 +251,7 @@
 	},
 	"N24": {
 		"name": "Energise",
-		"stats": [
-			"35% chance for Trigger skills to refund half of Energy Spent"
-		]
+		"stats": ["35% chance for Trigger skills to refund half of Energy Spent"]
 	},
 	"N25": {
 		"name": "Eldritch Will",
@@ -983,8 +981,8 @@
 		"stats": ["29% increased Chaos Damage", "10% increased Global Defences"]
 	},
 	"N195": {
-		"name": "N195",
-		"stats": []
+		"name": "Briny Carapace",
+		"stats": ["60% increased Stun Threshold for each time you've been Stunned Recently"]
 	},
 	"N196": {
 		"name": "N196",
@@ -1321,8 +1319,11 @@
 		"stats": []
 	},
 	"N277": {
-		"name": "N277",
-		"stats": []
+		"name": "Siphon",
+		"stats": [
+			"Recover 2% of Mana on Kill",
+			"25% increased amount of Mana Leeched"
+		]
 	},
 	"N278": {
 		"name": "N278",
