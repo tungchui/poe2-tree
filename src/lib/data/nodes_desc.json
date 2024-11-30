@@ -1455,8 +1455,8 @@
 		"stats": []
 	},
 	"N308": {
-		"name": "N308",
-		"stats": []
+		"name": "Smash",
+		"stats": ["20% increased Melee Damage", "40% increased Melee Damage against Heavy Stunned ennemies"]
 	},
 	"N309": {
 		"name": "N309",
