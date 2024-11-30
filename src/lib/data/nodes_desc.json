@@ -1660,8 +1660,12 @@
 		]
 	},
 	"N362": {
-		"name": "N362",
-		"stats": []
+		"name": "Remorseless",
+		"stats": [
+			"15% increased Projectile Damage",
+			"30% increased Stun Buildup against enemies within 2 metres",
+			"+5 Strength and Dexterity"
+		]
 	},
 	"N363": {
 		"name": "N363",
