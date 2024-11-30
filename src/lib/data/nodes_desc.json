@@ -1785,8 +1785,8 @@
 		"stats": []
 	},
 	"N390": {
-		"name": "N390",
-		"stats": []
+		"name": "Cacophony",
+		"stats": ["5% chance to deal Double Damage if you've Warcried in the past 8 seconds" ,"40% increased Damage with Warcry"]
 	},
 	"N391": {
 		"name": "N391",
