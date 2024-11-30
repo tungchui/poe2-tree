@@ -1981,8 +1981,8 @@
 		]
 	},
 	"N428": {
-		"name": "N428",
-		"stats": []
+		"name": "Voracious",
+		"stats": ["20% of Leech is Instant"]
 	},
 	"N429": {
 		"name": "N429",
