@@ -1892,8 +1892,8 @@
 		"stats": ["100% of Strength Requirements from Boots, Gloves and Helmets also added to Armour"]
 	},
 	"N408": {
-		"name": "N408",
-		"stats": []
+		"name": "Carved Earth",
+		"stats": ["20 increased Totem Damage" ,"6% increased Attack and Cast Speed if you've summoned a Totem Recently"]
 	},
 	"N409": {
 		"name": "N409",
