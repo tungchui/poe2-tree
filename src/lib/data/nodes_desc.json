@@ -1793,8 +1793,8 @@
 		"stats": []
 	},
 	"N392": {
-		"name": "N392",
-		"stats": []
+		"name": "Shockwaves",
+		"stats": ["30% increased Area of Effect if you've Stunned an enemy with a Two Handed Melee Weapon Recently"]
 	},
 	"N393": {
 		"name": "N393",
