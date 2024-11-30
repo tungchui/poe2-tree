@@ -57,12 +57,13 @@ The UI/UX is quite basic and can be improved in many ways, if you have any ideas
 - [Dex Area](https://www.youtube.com/watch?v=WmAI31iog94)
 - [Dex/Str Area](https://www.youtube.com/watch?v=YOQlMiDNpyQ)
 
+## Bajheera Youtube
+
+- [Str/Dex Area](https://www.youtube.com/watch?v=Ec_06V4NOWc)
+
 # Sources to map
 
 ## Dreamcore Youtube
 
 - [Int/Dex Area](https://www.youtube.com/watch?v=aTi9fF6fU24)
 - [Str Area](https://www.youtube.com/watch?v=yPh98i0-oHs)
-
-## Bajheera Youtube
-- [Str/Dex Area] (https://www.youtube.com/watch?v=Ec_06V4NOWc)

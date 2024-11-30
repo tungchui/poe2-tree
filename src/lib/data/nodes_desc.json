@@ -13,15 +13,11 @@
 	},
 	"K4": {
 		"name": "Chaos Inoculation",
-		"stats": [
-			"Maximum Life becomes 1, Immune to Chaos Damage"
-		]
+		"stats": ["Maximum Life becomes 1, Immune to Chaos Damage"]
 	},
 	"K5": {
 		"name": "Conduit",
-		"stats": [
-			"If you would gain a Charge, Allies in your Presence gain that Charge instead"
-		]
+		"stats": ["If you would gain a Charge, Allies in your Presence gain that Charge instead"]
 	},
 	"K6": {
 		"name": "Ancestral Bond",
@@ -29,10 +25,7 @@
 	},
 	"K7": {
 		"name": "Mind Over Matter",
-		"stats": [
-			"All Damage is taken from Mana before Life",
-			"50% less Mana Recovery Rate"
-		]
+		"stats": ["All Damage is taken from Mana before Life", "50% less Mana Recovery Rate"]
 	},
 	"K8": {
 		"name": "Zealot's Oath",
@@ -72,24 +65,15 @@
 	},
 	"K13": {
 		"name": "Bloodmagic",
-		"stats": [
-			"Removes all Mana",
-			"Skills Cost Life instead of Mana"
-		]
+		"stats": ["Removes all Mana", "Skills Cost Life instead of Mana"]
 	},
 	"K14": {
 		"name": "Acrobatics",
-		"stats": [
-			"Can Evade all Hits",
-			"50% less Evasion Rating"
-		]
+		"stats": ["Can Evade all Hits", "50% less Evasion Rating"]
 	},
 	"K15": {
 		"name": "Resolute Technique",
-		"stats": [
-			"Your Hits can´t be Evaded",
-			"Never deal Critical Hits"
-		]
+		"stats": ["Your Hits can´t be Evaded", "Never deal Critical Hits"]
 	},
 	"K16": {
 		"name": "Avatar of Fire",
@@ -97,10 +81,7 @@
 	},
 	"K17": {
 		"name": "Oasis",
-		"stats": [
-			"Cannot use Charms",
-			"30% more Recovery from Flasks"
-		]
+		"stats": ["Cannot use Charms", "30% more Recovery from Flasks"]
 	},
 	"K18": {
 		"name": "Elemental Equilibrium",
@@ -112,34 +93,26 @@
 	},
 	"K19": {
 		"name": "Unwavering Stance",
-		"stats": [
-			"Your Stun Threshold is doubled",
-			"Cannot Dodge Roll"
-		]
+		"stats": ["Your Stun Threshold is doubled", "Cannot Dodge Roll"]
 	},
 	"K20": {
 		"name": "Giant's Blood",
-		"stats": ["You Can wield Two-Handed Axes, Maces and Swords in one hand", "Double Attribute requirements of weapons"]
+		"stats": [
+			"You Can wield Two-Handed Axes, Maces and Swords in one hand",
+			"Double Attribute requirements of weapons"
+		]
 	},
 	"K21": {
 		"name": "Glancing Blows",
-		"stats": [
-			"Block Chance is doubled",
-			"You take 50% of Damage from Blocked Hits"
-		]
+		"stats": ["Block Chance is doubled", "You take 50% of Damage from Blocked Hits"]
 	},
 	"K22": {
 		"name": "Vaal Pact",
-		"stats": [
-			"Life Leech is Instant",
-			"Cannot use Life Flasks"
-		]
+		"stats": ["Life Leech is Instant", "Cannot use Life Flasks"]
 	},
 	"K23": {
 		"name": "Iron Reflexes",
-		"stats": [
-			"Converts all Evasion Rating to Armour"
-		]
+		"stats": ["Converts all Evasion Rating to Armour"]
 	},
 	"K24": {
 		"name": "Bulwark",
@@ -642,9 +615,7 @@
 	},
 	"N117": {
 		"name": "Spectral Ward",
-		"stats": [
-			"+1 to Maximum Energy Shield per 12 Evasion Rating on Equipped Body Armour"
-		]
+		"stats": ["+1 to Maximum Energy Shield per 12 Evasion Rating on Equipped Body Armour"]
 	},
 	"N118": {
 		"name": "Self Mortification",
@@ -709,10 +680,7 @@
 	},
 	"N131": {
 		"name": "Slippery Ice",
-		"stats": [
-			"25% reduced Effect of Chill on you",
-			"Unaffected by Chill during Dodge Roll"
-		]
+		"stats": ["25% reduced Effect of Chill on you", "Unaffected by Chill during Dodge Roll"]
 	},
 	"N132": {
 		"name": "N132",
@@ -777,8 +745,8 @@
 		"stats": []
 	},
 	"N147": {
-		"name": "N147",
-		"stats": []
+		"name": "Core of the Guardian",
+		"stats": ["100% increased Defences from Equipped Shield"]
 	},
 	"N148": {
 		"name": "N148",
@@ -809,8 +777,11 @@
 		"stats": []
 	},
 	"N155": {
-		"name": "N155",
-		"stats": []
+		"name": "Heart Tissue",
+		"stats": [
+			"6% of Damage taken Recouped as Life",
+			"Regenerate 0.8% of Life per second if you have been Hit Recently"
+		]
 	},
 	"N156": {
 		"name": "N156",
@@ -821,8 +792,8 @@
 		"stats": []
 	},
 	"N158": {
-		"name": "N158",
-		"stats": []
+		"name": "Thickened Arteries",
+		"stats": ["5% reduced Movement Speed", "Regenerate 2% of Life per second while stationary"]
 	},
 	"N159": {
 		"name": "N159",
@@ -845,8 +816,8 @@
 		"stats": []
 	},
 	"N164": {
-		"name": "N164",
-		"stats": []
+		"name": "Guttural Roar",
+		"stats": ["30% increased Warcry Speed", "Warcry Skills have 30% increased Area of Effect"]
 	},
 	"N165": {
 		"name": "Essence Infusion",
@@ -861,8 +832,11 @@
 		"stats": []
 	},
 	"N168": {
-		"name": "N168",
-		"stats": []
+		"name": "Deafening Cries",
+		"stats": [
+			"25% increased Warcry Cooldown Recovery Rate",
+			"8% increased Damage for each time you've Warcried Recently"
+		]
 	},
 	"N169": {
 		"name": "N169",
@@ -928,9 +902,7 @@
 	},
 	"N183": {
 		"name": "Wild Storm",
-		"stats": [
-			"15% more Maximum Lightning Damage"
-		]
+		"stats": ["15% more Maximum Lightning Damage"]
 	},
 	"N184": {
 		"name": "N184",
@@ -973,8 +945,8 @@
 		"stats": []
 	},
 	"N193": {
-		"name": "N193",
-		"stats": []
+		"name": "Rattling Ball",
+		"stats": ["25% increased Damage with Flails"]
 	},
 	"N194": {
 		"name": "Spiral into Insanity",
@@ -1013,8 +985,8 @@
 		"stats": []
 	},
 	"N203": {
-		"name": "N203",
-		"stats": []
+		"name": "Spiked Whip",
+		"stats": ["25% increased Damage with Flails"]
 	},
 	"N204": {
 		"name": "Reinforced Barrier",
@@ -1024,8 +996,11 @@
 		]
 	},
 	"N205": {
-		"name": "N205",
-		"stats": []
+		"name": "Morning Star",
+		"stats": [
+			"30% increased Critical Hit Chance with Flails",
+			"20% increased Critical Damage Bonus with Flails"
+		]
 	},
 	"N206": {
 		"name": "N206",
@@ -1115,8 +1090,8 @@
 		"stats": []
 	},
 	"N227": {
-		"name": "N227",
-		"stats": []
+		"name": "Immolation",
+		"stats": ["25% increased Effect of Ignite", "+10 to Strength"]
 	},
 	"N228": {
 		"name": "N228",
@@ -1191,8 +1166,11 @@
 		"stats": []
 	},
 	"N246": {
-		"name": "N246",
-		"stats": []
+		"name": "Primal Growth",
+		"stats": [
+			"20% increased Area of Effect if you've Killed Recently",
+			"10% increased Area of Effect for Attacks"
+		]
 	},
 	"N247": {
 		"name": "Supportive Ancestors",
@@ -1203,8 +1181,8 @@
 		]
 	},
 	"N248": {
-		"name": "N248",
-		"stats": []
+		"name": "Cold Nature",
+		"stats": ["25% increased Cold Damage", "25% increased Chill Duration on Enemies"]
 	},
 	"N249": {
 		"name": "N249",
@@ -1231,8 +1209,8 @@
 		"stats": []
 	},
 	"N255": {
-		"name": "N255",
-		"stats": []
+		"name": "Projectile Bulwark",
+		"stats": ["30% increased Armour", "Defend with 120% of Armour against Projectile Attacks"]
 	},
 	"N256": {
 		"name": "N256",
@@ -1251,16 +1229,16 @@
 		"stats": []
 	},
 	"N260": {
-		"name": "N260",
-		"stats": []
+		"name": "Sigil of Fire",
+		"stats": ["30% increased Damage with Hits against Ignited Enemies"]
 	},
 	"N261": {
 		"name": "N261",
 		"stats": []
 	},
 	"N262": {
-		"name": "N262",
-		"stats": []
+		"name": "In Your Face",
+		"stats": ["40% increased Melee Damage with Hits at Close Range"]
 	},
 	"N263": {
 		"name": "N263",
@@ -1338,8 +1316,8 @@
 		"stats": []
 	},
 	"N281": {
-		"name": "N281",
-		"stats": []
+		"name": "Defensive Reflexes",
+		"stats": ["12% increased Chance to Block", "2 Mana gained when you Block"]
 	},
 	"N282": {
 		"name": "Manifold Method",
@@ -1385,8 +1363,11 @@
 		]
 	},
 	"N291": {
-		"name": "N291",
-		"stats": []
+		"name": "Stand Ground",
+		"stats": [
+			"Regenerate 2% of Life per second while affected by any Damaging Ailment",
+			"Regenerate 2% of Life per second while stationary"
+		]
 	},
 	"N292": {
 		"name": "N292",
@@ -1425,14 +1406,12 @@
 		"stats": []
 	},
 	"N301": {
-		"name": "N301",
-		"stats": []
+		"name": "Prism Guard",
+		"stats": ["+1% to all maximum Elemental Resistances", "+5% to all Elemental Resistances"]
 	},
 	"N302": {
 		"name": "Low Tolerance",
-		"stats": [
-			"60% increased Effect of Poison against Enemies that are not Poisoned"
-		]
+		"stats": ["60% increased Effect of Poison against Enemies that are not Poisoned"]
 	},
 	"N303": {
 		"name": "N303",
@@ -1463,8 +1442,8 @@
 		"stats": []
 	},
 	"N310": {
-		"name": "N310",
-		"stats": []
+		"name": "Impact Force",
+		"stats": ["20% increased Stun Buildup", "25% increased Attack Area Damage"]
 	},
 	"N311": {
 		"name": "N311",
@@ -1479,8 +1458,8 @@
 		"stats": []
 	},
 	"N314": {
-		"name": "N314",
-		"stats": []
+		"name": "Shattering Blow",
+		"stats": ["Break 50% of Armour on Heavy Stunning an Enemy"]
 	},
 	"N315": {
 		"name": "N315",
@@ -1492,9 +1471,7 @@
 	},
 	"N317": {
 		"name": "Falcon Technique",
-		"stats": [
-			"1% increased Attack Speed per 15 Dexterity"
-		]
+		"stats": ["1% increased Attack Speed per 15 Dexterity"]
 	},
 	"N318": {
 		"name": "N318",
@@ -1509,8 +1486,8 @@
 		"stats": []
 	},
 	"N321": {
-		"name": "N321",
-		"stats": []
+		"name": "Flip the Script",
+		"stats": ["Recover 50% of Life when you Heavy Stun a Rare of Unique Enemy"]
 	},
 	"N322": {
 		"name": "N322",
@@ -1533,8 +1510,8 @@
 		"stats": []
 	},
 	"N327": {
-		"name": "N327",
-		"stats": []
+		"name": "Reverberating Impact",
+		"stats": ["Break 25% increased Armour", "16% increased Area of Effect for Attacks"]
 	},
 	"N328": {
 		"name": "N328",
@@ -1593,8 +1570,8 @@
 		"stats": []
 	},
 	"N342": {
-		"name": "N342",
-		"stats": []
+		"name": "Hunker Down",
+		"stats": ["Recover 20 Life when you Block", "80% less Knockback Distance for Blocked Hits"]
 	},
 	"N343": {
 		"name": "Aftershocks",
@@ -1634,22 +1611,25 @@
 	},
 	"N352": {
 		"name": "Stacking Toxins",
-		"stats": [
-			"Can Poison enemies an additional time",
-			"20% reduced Effect of Poison"
-		]
+		"stats": ["Can Poison enemies an additional time", "20% reduced Effect of Poison"]
 	},
 	"N353": {
-		"name": "N353",
-		"stats": []
+		"name": "Impair",
+		"stats": [
+			"25% increased Damage with One Handed Weapons",
+			"Attacks have 10% chance to Maim on Hit"
+		]
 	},
 	"N354": {
 		"name": "N354",
 		"stats": []
 	},
 	"N355": {
-		"name": "N355",
-		"stats": []
+		"name": "Guts",
+		"stats": [
+			"Recovery 5% of Life for each Endurance Charge consumed",
+			"+1 to Maximum Endurance Charges"
+		]
 	},
 	"N356": {
 		"name": "N356",
@@ -1660,8 +1640,8 @@
 		"stats": []
 	},
 	"N358": {
-		"name": "N358",
-		"stats": []
+		"name": "Reaving",
+		"stats": ["8% increased Attack Speed with One Handed Weapons", "+15 to Dexterity"]
 	},
 	"N359": {
 		"name": "N359",
@@ -1672,8 +1652,12 @@
 		"stats": []
 	},
 	"N361": {
-		"name": "N361",
-		"stats": []
+		"name": "Battle-hardened",
+		"stats": [
+			"Hits against you have 20% reduced Critical Damage Bonus",
+			"20% increased Armour and Evasion Rating",
+			"+5 to Strength and Dexterity"
+		]
 	},
 	"N362": {
 		"name": "N362",
@@ -1696,12 +1680,15 @@
 		"stats": []
 	},
 	"N367": {
-		"name": "N367",
-		"stats": []
+		"name": "Honourless",
+		"stats": [
+			"25% increased Armour if you've Hit an Enemy with a Melee Attack Recently",
+			"50% increased Melee Damage against Immobilised Enemies"
+		]
 	},
 	"N368": {
-		"name": "N368",
-		"stats": []
+		"name": "Feel No Pain",
+		"stats": ["20% increased Armour and Evasion Rating", "20% increased Stun Threshold"]
 	},
 	"N369": {
 		"name": "N369",
@@ -1713,14 +1700,14 @@
 	},
 	"N371": {
 		"name": "Unbending",
-		"stats": [
-			"3% increased Maximum Life",
-			"30% increased Stun Threshold"
-		]
+		"stats": ["3% increased Maximum Life", "30% increased Stun Threshold"]
 	},
 	"N372": {
-		"name": "N372",
-		"stats": []
+		"name": "Polished Iron",
+		"stats": [
+			"25% increased Armour",
+			"50% of Base Armour from Equipment also added to Stun Threshold"
+		]
 	},
 	"N373": {
 		"name": "N373",
@@ -1731,16 +1718,19 @@
 		"stats": []
 	},
 	"N375": {
-		"name": "N375",
-		"stats": []
+		"name": "Unforgiving",
+		"stats": ["+4 to Maximum Rage", "Inherent Rage Loss starts 1 second later"]
 	},
 	"N376": {
 		"name": "N376",
 		"stats": []
 	},
 	"N377": {
-		"name": "N377",
-		"stats": []
+		"name": "Breaking Blows",
+		"stats": [
+			"30% increased Stun Buildup",
+			"15% increased Area of Effect if you have Stunned an Enemy Recently"
+		]
 	},
 	"N378": {
 		"name": "N378",
@@ -1775,12 +1765,16 @@
 		"stats": []
 	},
 	"N386": {
-		"name": "N386",
-		"stats": []
+		"name": "Unerring Impact",
+		"stats": [
+			"10% increased Accuracy Rating with One Handed Melee Weapons",
+			"10% increased Accuracy Rating with Two Handed Melee Weapons",
+			"+2 to Melee Strike Range"
+		]
 	},
 	"N387": {
-		"name": "N387",
-		"stats": []
+		"name": "Blade Catcher",
+		"stats": ["Defend with 200% of Armour against Critical Hits", "+15 to Strength"]
 	},
 	"N388": {
 		"name": "N388",
@@ -1811,20 +1805,27 @@
 		"stats": []
 	},
 	"N395": {
-		"name": "N395",
-		"stats": []
+		"name": "Heavy Weaponry",
+		"stats": [
+			"15% increased Melee Damage",
+			"15% increased Stun Buildup with Melee Damage",
+			"+15 to Strength"
+		]
 	},
 	"N396": {
-		"name": "N396",
-		"stats": []
+		"name": "Exposed Wounds",
+		"stats": [
+			"32% increased chance to inflict Ailments",
+			"Break 30% increased Armour on enemies affected by Ailments"
+		]
 	},
 	"N397": {
-		"name": "N397",
-		"stats": []
+		"name": "Hard to Kill",
+		"stats": ["40% increased Flask Life Recovery rate", "Regenerate 1.5% of Life per second"]
 	},
 	"N398": {
-		"name": "N398",
-		"stats": []
+		"name": "Volatile Catalyst",
+		"stats": ["10% increased Area of Effect", "10% increased Cooldown Recovery Rate"]
 	},
 	"N399": {
 		"name": "N399",
@@ -1843,8 +1844,8 @@
 		"stats": []
 	},
 	"N403": {
-		"name": "N403",
-		"stats": []
+		"name": "Bloodletting",
+		"stats": ["40% increased Bleeding Duration", "20% chance to inflict Bleeding on Hit"]
 	},
 	"N404": {
 		"name": "N404",
@@ -1855,8 +1856,11 @@
 		"stats": []
 	},
 	"N406": {
-		"name": "N406",
-		"stats": []
+		"name": "Fortifying Blood",
+		"stats": [
+			"20% increased amount of Life Leeched",
+			"40% increased Armour and Evasion Rating while Leeching"
+		]
 	},
 	"N407": {
 		"name": "N407",
@@ -1872,17 +1876,15 @@
 	},
 	"N410": {
 		"name": "Skullcrusher",
-		"stats": [
-			"20% more Damage against Heavy Stunned Enemies with Maces"
-		]
+		"stats": ["20% more Damage against Heavy Stunned Enemies with Maces"]
 	},
 	"N411": {
 		"name": "N411",
 		"stats": []
 	},
 	"N412": {
-		"name": "N412",
-		"stats": []
+		"name": "Vigilance",
+		"stats": ["12% increased Chance to Block", "10 Life gained when you Block"]
 	},
 	"N413": {
 		"name": "N413",
@@ -1913,8 +1915,11 @@
 		"stats": []
 	},
 	"N420": {
-		"name": "N420",
-		"stats": []
+		"name": "Heavy Draught",
+		"stats": [
+			"5% reduced Movement Speed during any Flask Effect",
+			"Guard Flasks applied to you have 40% increased Effect"
+		]
 	},
 	"N421": {
 		"name": "Made to Last",
@@ -1940,8 +1945,8 @@
 		"stats": []
 	},
 	"N426": {
-		"name": "N426",
-		"stats": []
+		"name": "Back in Action",
+		"stats": ["80% increased Stun and Block Recovery"]
 	},
 	"N427": {
 		"name": "Catalysis",
@@ -1963,16 +1968,22 @@
 		"stats": []
 	},
 	"N431": {
-		"name": "N431",
-		"stats": []
+		"name": "Colossal Weapon",
+		"stats": [
+			"20% increased Area of Effect while wielding a Two Handed Melee Weapon",
+			"+10 to Strength"
+		]
 	},
 	"N432": {
 		"name": "N432",
 		"stats": []
 	},
 	"N433": {
-		"name": "N433",
-		"stats": []
+		"name": "Split the Earth",
+		"stats": [
+			"15% chance to Aftershock for Slam Skills you use with Maces",
+			"15% chance to Aftershock for Strike Skills you use with Maces"
+		]
 	},
 	"N434": {
 		"name": "N434",
@@ -2003,20 +2014,26 @@
 		"stats": []
 	},
 	"N441": {
-		"name": "N441",
-		"stats": []
+		"name": "Blade Flurry",
+		"stats": [
+			"6% increased Attack Speed while Dual Wielding",
+			"15% increased Attack Critical Hit Chance while Dual Wielding"
+		]
 	},
 	"N442": {
-		"name": "N442",
-		"stats": []
+		"name": "Cross Strike",
+		"stats": [
+			"20% increased Accuracy Rating while Dual Wielding",
+			"3% increased Movement Speed while Dual Wielding"
+		]
 	},
 	"N443": {
-		"name": "N443",
-		"stats": []
+		"name": "Irreparable",
+		"stats": ["100% increased Armour Break Duration"]
 	},
 	"N444": {
-		"name": "N444",
-		"stats": []
+		"name": "Curved Weapon",
+		"stats": ["20% increased Accuracy Rating with Two Handed Melee Weapons", "+10 to Dexterity"]
 	},
 	"N445": {
 		"name": "N445",
@@ -2035,8 +2052,12 @@
 		"stats": []
 	},
 	"N449": {
-		"name": "N449",
-		"stats": []
+		"name": "Overwhelm",
+		"stats": [
+			"5% reduced Attack Speed",
+			"20% increased Stun Buildup",
+			"40% increased Damage with Two Handed Weapons"
+		]
 	},
 	"N450": {
 		"name": "N450",
@@ -2044,9 +2065,7 @@
 	},
 	"N451": {
 		"name": "Lay Siege",
-		"stats": [
-			"1% increased Damage per 1% Chance to Block"
-		]
+		"stats": ["1% increased Damage per 1% Chance to Block"]
 	},
 	"N452": {
 		"name": "N452",
@@ -2058,27 +2077,26 @@
 	},
 	"N454": {
 		"name": "Heatproofing",
-		"stats": [
-			"25% of Armour also applies to Fire Damage taken from Hits"
-		]
+		"stats": ["25% of Armour also applies to Fire Damage taken from Hits"]
 	},
 	"N455": {
 		"name": "Quick-change Act",
-		"stats": [
-			"50% increased Weapon Swap Speed"
-		]
+		"stats": ["50% increased Weapon Swap Speed"]
 	},
 	"N456": {
-		"name": "N456",
-		"stats": []
+		"name": "Clear Space",
+		"stats": [
+			"20% increased Knockback Distance",
+			"20% chance to Knock Enemies Back with Hits at Close Range"
+		]
 	},
 	"N457": {
 		"name": "N457",
 		"stats": []
 	},
 	"N458": {
-		"name": "N458",
-		"stats": []
+		"name": "Pile On",
+		"stats": ["60% increased Damage against Enemies with Fully Broken Armour"]
 	},
 	"N459": {
 		"name": "N459",
@@ -2125,20 +2143,19 @@
 		"stats": []
 	},
 	"N470": {
-		"name": "N470",
-		"stats": []
+		"name": "Coated Arms",
+		"stats": [
+			"25% increased Damage with One Handed Weapons",
+			"25% increased Chance to apply Ailments with One-Handed Attacks"
+		]
 	},
 	"N471": {
 		"name": "Grenadier",
-		"stats": [
-			"Grenade Skills have +1 Cooldown Use"
-		]
+		"stats": ["Grenade Skills have +1 Cooldown Use"]
 	},
 	"N472": {
 		"name": "Cluster Bombs",
-		"stats": [
-			"Grenade Skills Fire an additional Projectile"
-		]
+		"stats": ["Grenade Skills Fire an additional Projectile"]
 	},
 	"N473": {
 		"name": "N473",
@@ -2161,8 +2178,8 @@
 		"stats": ["Jagged Ground you create applies 10% increased Damage taken to Enemies"]
 	},
 	"N478": {
-		"name": "N478",
-		"stats": []
+		"name": "Whirling Onslaught",
+		"stats": ["50% chance to gain Onslaught on Killing Blow with Axes"]
 	},
 	"N479": {
 		"name": "N479",
@@ -2177,15 +2194,12 @@
 		"stats": []
 	},
 	"N482": {
-		"name": "N482",
-		"stats": []
+		"name": "Close Confines",
+		"stats": ["25% chance for Projectiles to Pierce Enemies within 3m distance of you"]
 	},
 	"N483": {
 		"name": "Unexpected Finesse",
-		"stats": [
-			"10% increased Attack Damage",
-			"Gain Accuracy Rating equal to your Strength"
-		]
+		"stats": ["10% increased Attack Damage", "Gain Accuracy Rating equal to your Strength"]
 	},
 	"N484": {
 		"name": "N484",
@@ -2200,12 +2214,18 @@
 		"stats": []
 	},
 	"N487": {
-		"name": "N487",
-		"stats": []
+		"name": "Initiative",
+		"stats": [
+			"30% increased Melee Damage when on Full Life",
+			"16% increased Attack Speed if you haven't Attacked Recently"
+		]
 	},
 	"N488": {
-		"name": "N488",
-		"stats": []
+		"name": "Presence Present",
+		"stats": [
+			"Allies in your PResence have +100 to Accuracy Rating",
+			"35% increased Attack Damage while you have an Ally in your Presence"
+		]
 	},
 	"N489": {
 		"name": "N489",
@@ -2220,8 +2240,8 @@
 		"stats": []
 	},
 	"N492": {
-		"name": "N492",
-		"stats": []
+		"name": "Enraged Reaver",
+		"stats": ["+10 to Maximum Rage while wielding an Axe"]
 	},
 	"N493": {
 		"name": "N493",
@@ -2244,8 +2264,8 @@
 		"stats": []
 	},
 	"N498": {
-		"name": "N498",
-		"stats": []
+		"name": "Deadly Flourish",
+		"stats": ["20% increased Melee Critical Hit Chance"]
 	},
 	"N499": {
 		"name": "N499",
@@ -2261,22 +2281,22 @@
 	},
 	"N502": {
 		"name": "Multitasking",
-		"stats": [
-			"15% increased Skill Effect Duration",
-			"12% increased Cooldown Recovery Rate"
-		]
+		"stats": ["15% increased Skill Effect Duration", "12% increased Cooldown Recovery Rate"]
 	},
 	"N503": {
-		"name": "N503",
-		"stats": []
+		"name": "Bloodthirsty",
+		"stats": ["25% increased amount of Life Leeched", "Leech Life 25% faster"]
 	},
 	"N504": {
 		"name": "N504",
 		"stats": []
 	},
 	"N505": {
-		"name": "N505",
-		"stats": []
+		"name": "Adrenaline Rush",
+		"stats": [
+			"4% increased Movement Speed if you've killed Recently",
+			"8% increased Attack Speed if you've Killed Recently"
+		]
 	},
 	"N506": {
 		"name": "N506",
@@ -2299,20 +2319,29 @@
 		"stats": []
 	},
 	"N511": {
-		"name": "N511",
-		"stats": []
+		"name": "Versatile Arms",
+		"stats": [
+			"6% increased Attack Speed with One Handed Melee Weapons",
+			"15% increased Accuracy Rating with One Handed Melee Weapons",
+			"+10 to Strength and Dexterity"
+		]
 	},
 	"N512": {
-		"name": "N512",
-		"stats": []
+		"name": "Hefty Unit",
+		"stats": ["+3 to Stun Threshold per Strength"]
 	},
 	"N513": {
 		"name": "N513",
 		"stats": []
 	},
 	"N514": {
-		"name": "N514",
-		"stats": []
+		"name": "Emboldened Avatar",
+		"stats": [
+			"30% increased chance to Ignite",
+			"30% increased Freeze Buildup",
+			"30% increased chance to Shock",
+			"20% increased Electrocute Buildup"
+		]
 	},
 	"N515": {
 		"name": "N515",
@@ -2324,13 +2353,11 @@
 	},
 	"N517": {
 		"name": "Unnatural Resilience",
-		"stats": [
-			"2% to Maximum fire Resistance for each 40% Uncapped Fire Resistance"
-		]
+		"stats": ["2% to Maximum fire Resistance for each 40% Uncapped Fire Resistance"]
 	},
 	"N518": {
-		"name": "N518",
-		"stats": []
+		"name": "Crystal Elixir",
+		"stats": ["40% increased Elemental Damage with Attack Skills during any Flask Effect"]
 	},
 	"N519": {
 		"name": "Distracting Presence",
@@ -2344,12 +2371,15 @@
 		"stats": []
 	},
 	"N521": {
-		"name": "N521",
-		"stats": []
+		"name": "Forces of Nature",
+		"stats": ["Attack Damage Penetrates 15% of Enemy Elemental Resistances"]
 	},
 	"N522": {
-		"name": "N522",
-		"stats": []
+		"name": "Perfect Opportunity",
+		"stats": [
+			"25% increased Stun Buildup",
+			"Damage with Hits is Lucky against Heavy Stunned Enemies"
+		]
 	},
 	"N523": {
 		"name": "N523",
@@ -2376,8 +2406,8 @@
 		"stats": []
 	},
 	"N529": {
-		"name": "N529",
-		"stats": []
+		"name": "Strong Chin",
+		"stats": ["Gain Stun Threshold equal to the lowest of Evasion and Armour on your Helmet"]
 	},
 	"N530": {
 		"name": "N530",
@@ -2392,24 +2422,34 @@
 		"stats": []
 	},
 	"N533": {
-		"name": "N533",
-		"stats": []
+		"name": "Insulated Treads",
+		"stats": ["Gain Ailment Threshold equal to the lowest of Evasion and Armour on your Boots"]
 	},
 	"N534": {
-		"name": "N534",
-		"stats": []
+		"name": "Shrapnel",
+		"stats": [
+			"30% chance to Pierce an Enemy",
+			"Projectiles have 30% chance to Chain an additional time from terrain"
+		]
 	},
 	"N535": {
-		"name": "N535",
-		"stats": []
+		"name": "Spiked Shield",
+		"stats": [
+			"50% increased Defences from Equipped Shield",
+			"1% increased Attack Damge per 75 Armour or Evasion Rating on Shield"
+		]
 	},
 	"N536": {
-		"name": "N536",
-		"stats": []
+		"name": "Shield Expertise",
+		"stats": ["12% increased Chance to Block", "40% increased Block Recovery"]
 	},
 	"N537": {
-		"name": "N537",
-		"stats": []
+		"name": "Urgent Call",
+		"stats": [
+			"Recover 3% of Life and Mana when you use a Warcry",
+			"24% increased Warcry Speed",
+			"18% increased Warcry Cooldown Recovery Rate"
+		]
 	},
 	"N538": {
 		"name": "N538",
@@ -2432,8 +2472,8 @@
 		"stats": []
 	},
 	"N543": {
-		"name": "N543",
-		"stats": []
+		"name": "Crushing Judgement",
+		"stats": ["25% increased Armour Break Duration", "25% increased Attack Area Damage"]
 	},
 	"N544": {
 		"name": "N544",
@@ -2452,48 +2492,51 @@
 		"stats": []
 	},
 	"N548": {
-		"name": "N548",
-		"stats": []
+		"name": "Authority",
+		"stats": ["20% increased Area of Effect for Attacks", "10% increased Cooldown Recovery Rate"]
 	},
 	"N549": {
-		"name": "N549",
-		"stats": []
+		"name": "Blinding Flash",
+		"stats": ["20% increased Blind Effect", "Blind Enemies when they Stun you"]
 	},
 	"N550": {
 		"name": "Levitation",
-		"stats": [
-			"Unaffected by Enemy Ground Effects for 1 second after stepping on them"
-		]
+		"stats": ["Unaffected by Enemy Ground Effects for 1 second after stepping on them"]
 	},
 	"N551": {
 		"name": "N551",
 		"stats": []
 	},
 	"N552": {
-		"name": "N552",
-		"stats": []
+		"name": "Against All Odds",
+		"stats": ["2% increased Attack Speed per Enemy in Close Range"]
 	},
 	"N553": {
-		"name": "N553",
-		"stats": []
+		"name": "Refills",
+		"stats": ["Life Flasks gain 0.4 charges per Second"]
 	},
 	"N554": {
-		"name": "N554",
-		"stats": []
+		"name": "Bleeding Out",
+		"stats": [
+			"+250 to Accuracy against Bleeding Enemies",
+			"Bleeding you inflict deals Damage 10% faster"
+		]
 	},
 	"N555": {
-		"name": "N555",
-		"stats": []
+		"name": "Pinpoint Shot",
+		"stats": ["Attacks gain increased Accuracy Rating equal to their Critical Hit Chance"]
 	},
 	"N556": {
-		"name": "N556",
-		"stats": []
+		"name": "Goring",
+		"stats": [
+			"5% reduced maximum Life",
+			"50% increased amount of Life Leeched",
+			"50% increased Physical Damage"
+		]
 	},
 	"N557": {
 		"name": "Metabolism",
-		"stats": [
-			"Life Leech effects are not removed when Unreserved Life is Filled"
-		]
+		"stats": ["Life Leech effects are not removed when Unreserved Life is Filled"]
 	},
 	"N558": {
 		"name": "N558",
@@ -2501,28 +2544,27 @@
 	},
 	"N559": {
 		"name": "Apocalypse",
-		"stats": [
-			"40% reduced Damage",
-			"Herald Skills deal 200% increased Damage"
-		]
+		"stats": ["40% reduced Damage", "Herald Skills deal 200% increased Damage"]
 	},
 	"N560": {
-		"name": "N560",
-		"stats": []
+		"name": "Fate Finding",
+		"stats": ["15% reduced Reservation of Herald Skills"]
 	},
 	"N561": {
 		"name": "Repeating Explosives",
-		"stats": [
-			"Grenades have 20% change to activate a second time"
-		]
+		"stats": ["Grenades have 20% change to activate a second time"]
 	},
 	"N562": {
-		"name": "N562",
-		"stats": []
+		"name": "Reusable Ammunition",
+		"stats": ["25% chance for Crossbow Attacks to not consume a bolt"]
 	},
 	"N563": {
-		"name": "N563",
-		"stats": []
+		"name": "Giantslayer",
+		"stats": [
+			"25% increased Damage with Hits against Rare and Unique Enemies",
+			"20% increased Accuracy Rating against Rare or Unique Enemies",
+			"20% increased chance to inflict Ailments against Rare or Unique Enemies"
+		]
 	},
 	"N564": {
 		"name": "N564",
@@ -2530,42 +2572,41 @@
 	},
 	"N565": {
 		"name": "Cull the Hordes",
-		"stats": [
-			"25% increased Culling Strike Threshold"
-		]
+		"stats": ["25% increased Culling Strike Threshold"]
 	},
 	"N566": {
-		"name": "N566",
-		"stats": []
+		"name": "Titan Bindings",
+		"stats": ["Gain 15% of Maximum Life as Armour"]
 	},
 	"N567": {
-		"name": "N567",
-		"stats": []
+		"name": "Leather Bound Gauntlets",
+		"stats": ["+1 to Evasion Rating per 1 Armour on Equipped Gloves"]
 	},
 	"N568": {
-		"name": "N568",
-		"stats": []
+		"name": "Power Shots",
+		"stats": [
+			"10% reduced Attack Speed with Crossbows",
+			"80% increased Critical Damage Bonus with Crossbows"
+		]
 	},
 	"N569": {
-		"name": "N569",
-		"stats": []
+		"name": "Heavy Blade",
+		"stats": ["25% increased Damage with Swords"]
 	},
 	"N570": {
 		"name": "Polymathy",
-		"stats": [
-			"10% increased Attributes"
-		]
+		"stats": ["10% increased Attributes"]
 	},
 	"N571": {
-		"name": "N571",
-		"stats": []
+		"name": "Jack of All Trades",
+		"stats": ["2% increased Damage per 5 of your lowest Attribute"]
 	},
 	"N572": {
-		"name": "N572",
-		"stats": []
+		"name": "Ripping Blade",
+		"stats": ["25% increased Damage with Swords"]
 	},
 	"N573": {
-		"name": "N573",
-		"stats": []
+		"name": "Stance Breaker",
+		"stats": ["50% reduced Enemy Chance to Block Sword Attacks"]
 	}
 }
