@@ -38,9 +38,9 @@
 	let selectedNodes: string[] = [];
 
 	// State for filters
-	let highlightKeystones = true;
-	let highlightNotables = true;
-	let hideUnidentified = true;
+	let highlightKeystones = false;
+	let highlightNotables = false;
+	let hideUnidentified = false;
 
 	// Reactive statement for search
 	$: handleSearch(searchTerm);
@@ -207,8 +207,17 @@
 			const minPanX = containerWidth - scaledWidth;
 			const minPanY = containerHeight - scaledHeight;
 
-			panOffsetX = Math.max(minPanX, Math.min(0, panOffsetX));
-			panOffsetY = Math.max(minPanY, Math.min(0, panOffsetY));
+			if (containerWidth < scaledWidth) {
+				panOffsetX = Math.max(minPanX, Math.min(0, panOffsetX));
+			} else {
+				panOffsetX = (containerWidth - scaledWidth) / 2;
+			}
+
+			if (containerHeight < scaledHeight) {
+				panOffsetY = Math.max(minPanY, Math.min(0, panOffsetY));
+			} else {
+				panOffsetY = (containerHeight - scaledHeight) / 2;
+			}
 		}
 	}
 
@@ -326,8 +335,8 @@
 							class:highlighted-keystone={highlightKeystones && node.id.startsWith('K')}
 							class:highlighted-notable={highlightNotables && node.id.startsWith('N')}
 							style="
-								  width: {baseNodeSize * scale}px;
-								  height: {baseNodeSize * scale}px;
+								  width: {(baseNodeSize + node.id.startsWith('K') * 4) * scale}px;
+								  height: {(baseNodeSize + node.id.startsWith('K') * 4) * scale}px;
 								  left: {node.x * imageEl.naturalWidth * scale - (baseNodeSize * scale) / 2}px;
 								  top: {node.y * imageEl.naturalHeight * scale - (baseNodeSize * scale) / 2}px;
 							  "
@@ -426,7 +435,7 @@
 	}
 
 	.image-container {
-		position: relative; 
+		position: relative;
 		display: block;
 		overflow: hidden;
 		outline: none;
@@ -453,6 +462,7 @@
 
 	.notable.unidentified {
 		background-color: rgba(255, 100, 100, 0.2);
+		border-color: rgba(255, 100, 100, 1);
 	}
 
 	.keystone {
@@ -461,14 +471,15 @@
 
 	.keystone.unidentified {
 		background-color: rgba(255, 0, 100, 0.2);
+		border-color: rgba(255, 0, 100, 1);
 	}
 
 	.notable.selected {
-		background-color: rgba(255, 255, 0, 0.8);
+		background-color: rgba(255, 255, 0, 0.6);
 	}
 
 	.keystone.selected {
-		background-color: rgba(0, 255, 0, 0.8);
+		background-color: rgba(0, 255, 0, 0.6);
 	}
 
 	.highlighted-keystone {
@@ -476,7 +487,7 @@
 	}
 
 	.highlighted-notable {
-		border: 2px solid yellow;
+		border: 1px solid yellow;
 	}
 
 	@keyframes glow {
@@ -506,7 +517,6 @@
 		opacity: 0.9;
 		z-index: 1000; /* Ensure tooltip appears above other elements */
 		pointer-events: none; /* Allow clicks to pass through the tooltip */
-
 
 		/* Title style */
 		.title {
