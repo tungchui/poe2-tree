@@ -1853,8 +1853,8 @@
 		"stats": []
 	},
 	"N400": {
-		"name": "N400",
-		"stats": []
+		"name": "Vocal Empowerment",
+		"stats": ["Warcries Empower an additional Attack"]
 	},
 	"N401": {
 		"name": "N401",
