@@ -1797,8 +1797,8 @@
 		"stats": []
 	},
 	"N393": {
-		"name": "N393",
-		"stats": []
+		"name": "Devastation",
+		"stats": ["15% increased Attack Area Damage" ,"15% increased Area of Effect for Attacks"]
 	},
 	"N394": {
 		"name": "N394",
