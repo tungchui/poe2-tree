@@ -250,8 +250,10 @@
 		"stats": []
 	},
 	"N24": {
-		"name": "N24",
-		"stats": []
+		"name": "Energise",
+		"stats": [
+			"35% chance for Trigger skills to refund half of Energy Spent"
+		]
 	},
 	"N25": {
 		"name": "Eldritch Will",
@@ -589,8 +591,12 @@
 		"stats": ["24% chance for Spell Skills to fire 2 additional Projectiles"]
 	},
 	"N105": {
-		"name": "N105",
-		"stats": []
+		"name": "Inner Faith",
+		"stats": [
+			"20% increased Evasion Rating",
+			"20% increased maximum Energy Shield",
+			"25% reduced Effect of Curses on you"
+		]
 	},
 	"N106": {
 		"name": "N106",
@@ -1335,16 +1341,20 @@
 		"stats": []
 	},
 	"N282": {
-		"name": "N282",
-		"stats": []
+		"name": "Manifold Method",
+		"stats": [
+			"50% increased amount of Mana Leeched",
+			"30% increased chance to inflict Ailments against Rare or Unique Enemies"
+		]
 	},
 	"N283": {
 		"name": "N283",
 		"stats": []
 	},
 	"N284": {
-		"name": "N284",
-		"stats": []
+		"name": "One with the Storm",
+		"stats": [
+			"Querterstaff Skills that consume Power Charges count as consuming an additional Power Charge"]
 	},
 	"N285": {
 		"name": "N285",
