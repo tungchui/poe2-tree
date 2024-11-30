@@ -1342,16 +1342,20 @@
 		"stats": []
 	},
 	"N282": {
-		"name": "N282",
-		"stats": []
+		"name": "Manifold Method",
+		"stats": [
+			"50% increased amount of Mana Leeched",
+			"30% increased chance to inflict Ailments against Rare or Unique Enemies"
+		]
 	},
 	"N283": {
 		"name": "N283",
 		"stats": []
 	},
 	"N284": {
-		"name": "N284",
-		"stats": []
+		"name": "One with the Storm",
+		"stats": [
+			"Querterstaff Skills that consume Power Charges count as consuming an additional Power Charge"]
 	},
 	"N285": {
 		"name": "N285",
