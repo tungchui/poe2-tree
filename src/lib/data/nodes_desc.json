@@ -1960,8 +1960,8 @@
 		"stats": []
 	},
 	"N429": {
-		"name": "N429",
-		"stats": []
+		"name": "Internal Bleeding",
+		"stats": ["25% chance to Aggravate Bleedind on targets you Hit with Empowered Attacks" ,"Empowered Attacks deal 35% increased Damage"]
 	},
 	"N430": {
 		"name": "N430",
