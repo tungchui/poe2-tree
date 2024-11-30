@@ -1571,8 +1571,8 @@
 		"stats": []
 	},
 	"N337": {
-		"name": "N337",
-		"stats": []
+		"name": "Recentless",
+		"stats": ["15% increased Armour" ,"Regenerate 1% of life per second" ,"+10 to Strength"]
 	},
 	"N338": {
 		"name": "N338",
