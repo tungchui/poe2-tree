@@ -1,50 +1,183 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import { type NodePosition, type TooltipContent, loadData } from '$lib';
+	import { onMount, tick } from 'svelte';
 
 	let { positions: nodes, nodesDescription: nodesDesc } = loadData();
 
-	let imageEl: HTMLImageElement | null = $state(null);
-	let hasLoaded = $state(false);
+	let containerEl: HTMLDivElement | null = null;
+	let imageEl: HTMLImageElement | null = null;
+	let imageWrapperEl: HTMLDivElement | null = null; // Reference to the image wrapper
+	let tooltipEl: HTMLDivElement | null = null; // Reference to the tooltip element
+	let hasLoaded = false;
 
-	let tooltipContent: TooltipContent | null = $state(null);
-	let tooltipHold = $state(false);
-	let tooltipX = $state(0);
-	let tooltipY = $state(0);
+	let tooltipContent: TooltipContent | null = null;
+	let tooltipX = 0;
+	let tooltipY = 0;
 
-	let searchTerm = $state('');
-	let searchResults: string[] = $state([]);
-	$effect(() => {
-		handleSearch(searchTerm);
-	});
+	// State for panning
+	let isPanning = false;
+	let panStartX = 0;
+	let panStartY = 0;
+	let panOffsetX = 0;
+	let panOffsetY = 0;
 
-	function activateTooltip(node: NodePosition) {
+	// State for zoom
+	let scale = 0.75; // Initial zoom level (almost fully zoomed out)
+	const minScale = 0.5; // Minimum zoom out level
+	const maxScale = 3; // Maximum zoom in level
+
+	// Base size for nodes
+	const baseNodeSize = 20; // Adjust as needed
+
+	// State for search
+	let searchTerm = '';
+	let searchResults: string[] = [];
+
+	// State for selected nodes
+	let selectedNodes: string[] = [];
+
+	// State for filters
+	let highlightKeystones = false;
+	let highlightNotables = false;
+	let hideUnidentified = false;
+
+	// Reactive statement for search
+	$: handleSearch(searchTerm);
+
+	async function activateTooltip(node: NodePosition) {
 		tooltipContent = nodesDesc[node.id];
 
-		if (!imageEl) return;
+		if (!imageEl || !containerEl) return;
 
-		tooltipX = node.x * imageEl.width + 20; // Offset for positioning
-		tooltipY = node.y * imageEl.height - 20;
+		// Calculate node position relative to the container, accounting for pan offsets
+		const nodeX = node.x * imageEl.naturalWidth * scale + panOffsetX;
+		const nodeY = node.y * imageEl.naturalHeight * scale + panOffsetY;
+
+		// Initial tooltip position
+		tooltipX = nodeX + 20; // Adjust as needed
+		tooltipY = nodeY - 20;
+
+		await tick(); // Wait for the tooltip to render
+
+		if (tooltipEl && containerEl) {
+			const tooltipRect = tooltipEl.getBoundingClientRect();
+			const containerRect = containerEl.getBoundingClientRect();
+
+			// Compute tooltip position relative to container
+			const tooltipLeftInContainer = tooltipRect.left - containerRect.left;
+			const tooltipRightInContainer = tooltipLeftInContainer + tooltipRect.width;
+			const tooltipTopInContainer = tooltipRect.top - containerRect.top;
+			const tooltipBottomInContainer = tooltipTopInContainer + tooltipRect.height;
+
+			// Adjust positions to keep tooltip within container
+			if (tooltipRightInContainer > containerRect.width) {
+				tooltipX -= tooltipRightInContainer - containerRect.width + 20;
+			}
+
+			if (tooltipLeftInContainer < 0) {
+				tooltipX += -tooltipLeftInContainer + 20;
+			}
+
+			if (tooltipBottomInContainer > containerRect.height) {
+				tooltipY -= tooltipBottomInContainer - containerRect.height + 20;
+			}
+
+			if (tooltipTopInContainer < 0) {
+				tooltipY += -tooltipTopInContainer + 20;
+			}
+		}
 	}
-	function handleMousedown(node: NodePosition) {
-		tooltipHold = true;
-		activateTooltip(node);
+
+	function handleContainerMousedown(event: MouseEvent) {
+		event.preventDefault();
+
+		if (event.button === 0) {
+			if (containerEl) {
+				containerEl.focus();
+			}
+
+			isPanning = true;
+			panStartX = event.clientX - panOffsetX;
+			panStartY = event.clientY - panOffsetY;
+		}
+	}
+
+	function toggleNodeSelection(node: NodePosition) {
+		if (selectedNodes.includes(node.id)) {
+			// Deselect node
+			selectedNodes = selectedNodes.filter((id) => id !== node.id);
+		} else {
+			// Select node
+			selectedNodes = [...selectedNodes, node.id];
+		}
+	}
+
+	function handleMouseMove(event: MouseEvent) {
+		if (isPanning && containerEl) {
+			panOffsetX = event.clientX - panStartX;
+			panOffsetY = event.clientY - panStartY;
+			clampPanOffsets();
+		}
+	}
+
+	function handleMouseUp(event: MouseEvent) {
+		if (event.button === 0) {
+			isPanning = false;
+		}
 	}
 
 	function handleMouseEnter(node: NodePosition) {
-		activateTooltip(node);
-		tooltipHold = false;
+		if (!isPanning) {
+			activateTooltip(node);
+		}
 	}
 
 	function handleMouseLeave() {
-		if (!tooltipHold) {
+		if (!isPanning) {
 			tooltipContent = null;
 		}
 	}
 
+	function handleWheel(event: WheelEvent) {
+		event.preventDefault();
+
+		const zoomIntensity = 0.1;
+		const wheel = event.deltaY < 0 ? 1 : -1;
+		const oldScale = scale;
+
+		// Calculate new scale
+		scale += wheel * zoomIntensity * scale;
+		scale = Math.max(minScale, Math.min(maxScale, scale));
+
+		// Adjust pan offsets to zoom relative to the mouse position
+		if (containerEl && imageEl) {
+			const rect = containerEl.getBoundingClientRect();
+			const mouseX = event.clientX - rect.left;
+			const mouseY = event.clientY - rect.top;
+
+			const nodeX = (mouseX - panOffsetX) / oldScale;
+			const nodeY = (mouseY - panOffsetY) / oldScale;
+
+			panOffsetX = mouseX - nodeX * scale;
+			panOffsetY = mouseY - nodeY * scale;
+
+			clampPanOffsets();
+		}
+	}
+
 	function handleImageLoad() {
-		// this is necessary to prevent the nodes being rendered at (0, 0) before the image has loaded
 		hasLoaded = true;
+
+		if (imageEl && containerEl) {
+			const imageWidth = imageEl.naturalWidth * scale;
+			const imageHeight = imageEl.naturalHeight * scale;
+			const containerWidth = containerEl.clientWidth;
+			const containerHeight = containerEl.clientHeight;
+
+			panOffsetX = (containerWidth - imageWidth) / 2;
+			panOffsetY = (containerHeight - imageHeight) / 2;
+		}
 	}
 
 	function handleSearch(text: string) {
@@ -63,51 +196,164 @@
 			)
 			.map(([key, _]) => key);
 	}
+
+	function clampPanOffsets() {
+		if (imageEl && containerEl) {
+			const scaledWidth = imageEl.naturalWidth * scale;
+			const scaledHeight = imageEl.naturalHeight * scale;
+			const containerWidth = containerEl.clientWidth;
+			const containerHeight = containerEl.clientHeight;
+
+			const minPanX = containerWidth - scaledWidth;
+			const minPanY = containerHeight - scaledHeight;
+
+			if (containerWidth < scaledWidth) {
+				panOffsetX = Math.max(minPanX, Math.min(0, panOffsetX));
+			} else {
+				panOffsetX = (containerWidth - scaledWidth) / 2;
+			}
+
+			if (containerHeight < scaledHeight) {
+				panOffsetY = Math.max(minPanY, Math.min(0, panOffsetY));
+			} else {
+				panOffsetY = (containerHeight - scaledHeight) / 2;
+			}
+		}
+	}
+
+	// Add event listeners for global mouse events to handle panning
+	onMount(() => {
+		const handleMove = (event: MouseEvent) => {
+			if (isPanning) {
+				handleMouseMove(event);
+			}
+		};
+
+		const handleUp = (event: MouseEvent) => {
+			if (isPanning) {
+				handleMouseUp(event);
+			}
+		};
+
+		window.addEventListener('mousemove', handleMove);
+		window.addEventListener('mouseup', handleUp);
+
+		return () => {
+			window.removeEventListener('mousemove', handleMove);
+			window.removeEventListener('mouseup', handleUp);
+		};
+	});
 </script>
 
-<div style="padding-left: 16px;">
-	<h1>Path of Exile 2 Skill tree Preview</h1>
+<!-- Top Bar Section -->
+<div class="top-bar">
+	<!-- Moved the GitHub link to the top-right corner -->
+	<div class="github-link">
+		<a href="https://github.com/marcoaaguiar/poe2-tree" target="_blank" rel="noopener noreferrer">
+			<!-- GitHub SVG Icon -->
+			<svg height="32" viewBox="0 0 16 16" width="32" aria-hidden="true">
+				<path
+					fill-rule="evenodd"
+					d="M8 0C3.58 0 0 3.58 0 8a8 8 0 005.47 7.59c.4.07.55-.17.55-.38
+					  0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52
+					  0-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+					  0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.65 7.65 0 012 0c1.53-1.04
+					  2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+					  0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
+					  0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8 8 0 0016 8c0-4.42-3.58-8-8-8z"
+				>
+				</path>
+			</svg>
+		</a>
+	</div>
 
-	<p>Incomplete skill tree preview. Hover over the nodes to see their details.</p>
+	<h1>Path of Exile 2 Skill Tree Preview</h1>
 	<p>Check out the Github repository for how to contribute to this project.</p>
+	<!-- Filters -->
+	<div class="filters">
+		<label><input type="checkbox" bind:checked={highlightKeystones} /> Highlight Keystones</label>
+		<label><input type="checkbox" bind:checked={highlightNotables} /> Highlight Notables</label>
+		<label><input type="checkbox" bind:checked={hideUnidentified} /> Hide Unidentified</label>
+	</div>
 </div>
 
-<div>
-	<label for="search">Search</label>
+<!-- Search and Filter Section -->
+<div class="search-bar">
 	<input type="text" placeholder="Search..." bind:value={searchTerm} />
-
-	<span> > Search results: {searchResults.length}</span>
+	<span>Search results: {searchResults.length}</span>
+	<span>Selected Nodes: {selectedNodes.length}</span>
 </div>
 
-<div class="image-container">
-	<img bind:this={imageEl} onload={handleImageLoad} src="{base}/skill-tree.png" alt="Interactive" />
+<!-- Skill Tree Container -->
+<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+<div
+	bind:this={containerEl}
+	class="image-container"
+	role="application"
+	tabindex="-1"
+	onmousedown={handleContainerMousedown}
+	onwheel={handleWheel}
+>
+	<div
+		bind:this={imageWrapperEl}
+		class="image-wrapper"
+		style="
+			  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+			  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+			  transform: translate({panOffsetX}px, {panOffsetY}px);
+			  user-select: none;
+			  cursor: {isPanning ? 'grabbing' : 'grab'};
+		  "
+	>
+		<img
+			bind:this={imageEl}
+			onload={handleImageLoad}
+			src="{base}/skill-tree.png"
+			alt="Interactive"
+			draggable="false"
+			style="
+				  pointer-events: none;
+				  max-width: none;
+				  width: {imageEl ? imageEl.naturalWidth * scale + 'px' : 'auto'};
+				  height: {imageEl ? imageEl.naturalHeight * scale + 'px' : 'auto'};
+			  "
+		/>
 
-	<!-- Display hoverable regions with lighter color -->
-	{#if hasLoaded}
-		<!-- content here -->
-		{#each ['notables', 'keystones'] as kind}
-			{#each nodes[kind] as node}
-				<!-- svelte-ignore a11y_no_static_element_interactions -->
-				<div
-					class:notable={node.id.startsWith('N')}
-					class:keystone={node.id.startsWith('K')}
-					class:unidentified={nodesDesc[node.id].name === node.id}
-					class:search-result={searchResults.includes(node.id)}
-					style="
-        left: {node.x * imageEl?.width - 10}px;
-        top: {node.y * imageEl?.height - 10}px;
-      "
-					onmousedown={() => handleMousedown(node)}
-					onmouseenter={() => handleMouseEnter(node)}
-					onmouseleave={handleMouseLeave}
-				></div>
+		<!-- Display hoverable regions with lighter color -->
+		{#if hasLoaded}
+			{#each ['notables', 'keystones'] as kind}
+				{#each nodes[kind] as node}
+					{#if !(hideUnidentified && nodesDesc[node.id].name === node.id)}
+						<!-- svelte-ignore a11y_no_static_element_interactions -->
+						<!-- svelte-ignore a11y_click_events_have_key_events -->
+						<div
+							class:notable={node.id.startsWith('N')}
+							class:keystone={node.id.startsWith('K')}
+							class:unidentified={nodesDesc[node.id].name === node.id}
+							class:search-result={searchResults.includes(node.id)}
+							class:selected={selectedNodes.includes(node.id)}
+							class:highlighted-keystone={highlightKeystones && node.id.startsWith('K')}
+							class:highlighted-notable={highlightNotables && node.id.startsWith('N')}
+							style="
+								  width: {(baseNodeSize + node.id.startsWith('K') * 4) * scale}px;
+								  height: {(baseNodeSize + node.id.startsWith('K') * 4) * scale}px;
+								  left: {node.x * imageEl.naturalWidth * scale - (baseNodeSize * scale) / 2}px;
+								  top: {node.y * imageEl.naturalHeight * scale - (baseNodeSize * scale) / 2}px;
+							  "
+							onmousedown={(event) => event.stopPropagation()}
+							onclick={() => toggleNodeSelection(node)}
+							onmouseenter={() => handleMouseEnter(node)}
+							onmouseleave={handleMouseLeave}
+						></div>
+					{/if}
+				{/each}
 			{/each}
-		{/each}
-	{/if}
+		{/if}
+	</div>
 
 	<!-- Tooltip displayed when a region is hovered -->
 	{#if tooltipContent != null}
-		<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
+		<div bind:this={tooltipEl} class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
 			<div class="title" style={`background-image: url('${base}/tooltip-header.png');`}>
 				{tooltipContent.name}
 			</div>
@@ -121,37 +367,144 @@
 </div>
 
 <style>
+	.top-bar {
+		position: relative;
+		padding: 10px;
+		background-color: #000;
+		color: #fff;
+	}
+
+	.top-bar h1 {
+		margin: 10px 0;
+		font-size: 24px;
+		text-align: center;
+	}
+
+	.top-bar p {
+		margin: 5px 0;
+		font-size: 16px;
+		text-align: center;
+	}
+
+	.github-link {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+
+	.github-link a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.github-link svg {
+		fill: #fff;
+		transition: fill 0.3s;
+	}
+
+	.github-link svg:hover {
+		fill: #4078c0;
+	}
+
+	.search-bar {
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+	.search-bar input {
+		padding: 5px;
+		font-size: 16px;
+	}
+
+	.search-bar span {
+		margin-left: 10px;
+		font-size: 16px;
+	}
+
+	.filters {
+		display: inline-block;
+		margin-top: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.filters label {
+		margin-right: 10px;
+		font-size: 14px;
+	}
+
 	.image-container {
 		position: relative;
-		display: inline-block;
+		display: block;
+		overflow: hidden;
+		outline: none;
+		width: 100vw;
+		height: calc(100vh - 200px); /* Adjust based on top bar height */
+	}
+
+	.image-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.notable,
+	.keystone {
+		position: absolute;
+		border-radius: 50%;
+		pointer-events: auto;
 	}
 
 	.notable {
-		position: absolute;
-		width: 20px;
-		height: 20px;
-		border-radius: 50%;
 		background-color: rgba(255, 255, 0, 0.2);
-		pointer-events: auto; /* Allow mouse events */
 	}
+
 	.notable.unidentified {
 		background-color: rgba(255, 100, 100, 0.2);
+		border-color: rgba(255, 100, 100, 1);
 	}
 
 	.keystone {
-		position: absolute;
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
 		background-color: rgba(100, 255, 100, 0.2);
-		pointer-events: auto; /* Allow mouse events */
 	}
+
 	.keystone.unidentified {
 		background-color: rgba(255, 0, 100, 0.2);
+		border-color: rgba(255, 0, 100, 1);
+	}
+
+	.notable.selected {
+		background-color: rgba(255, 255, 0, 0.6);
+	}
+
+	.keystone.selected {
+		background-color: rgba(0, 255, 0, 0.6);
+	}
+
+	.highlighted-keystone {
+		border: 2px solid green;
+	}
+
+	.highlighted-notable {
+		border: 1px solid yellow;
+	}
+
+	@keyframes glow {
+		0% {
+			box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+		}
+		50% {
+			box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+		}
+		100% {
+			box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+		}
 	}
 
 	.search-result {
-		border: 2px solid rgba(255, 0, 0, 0.8);
+		border: 4px solid rgba(255, 0, 0, 0.8);
+		animation: glow 2s infinite;
 	}
 
 	.tooltip {
@@ -162,6 +515,8 @@
 		background-color: black; /* Slightly lighter background for the box */
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Subtle shadow */
 		opacity: 0.9;
+		z-index: 1000; /* Ensure tooltip appears above other elements */
+		pointer-events: none; /* Allow clicks to pass through the tooltip */
 
 		/* Title style */
 		.title {
