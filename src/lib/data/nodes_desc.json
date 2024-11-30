@@ -1607,8 +1607,8 @@
 		"stats": []
 	},
 	"N346": {
-		"name": "N346",
-		"stats": []
+		"name": "Defender's Resolve",
+		"stats": ["12% increased Chance to Block" ,"Stagger empties 50% faster while your Shield is lowered"]
 	},
 	"N347": {
 		"name": "N347",
