@@ -1852,8 +1852,8 @@
 		"stats": []
 	},
 	"N405": {
-		"name": "N405",
-		"stats": []
+		"name": "Grit",
+		"stats": ["5% chance that if you would gain Endurance Charges, you instead gain up to maximum Endurance Charges" ,"+1 to Maximum Endurance Charges"]
 	},
 	"N406": {
 		"name": "Fortifying Blood",
