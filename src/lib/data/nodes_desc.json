@@ -1924,8 +1924,8 @@
 		"stats": []
 	},
 	"N416": {
-		"name": "N416",
-		"stats": []
+		"name": "Desperate Times",
+		"stats": ["Regenerate 3% of Life per second while on Low Life" ,"40% increased Life Recovery from Flasks used when on Low Life"]
 	},
 	"N417": {
 		"name": "N417",
