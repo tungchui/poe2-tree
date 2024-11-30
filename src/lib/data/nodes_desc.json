@@ -1648,8 +1648,8 @@
 		"stats": []
 	},
 	"N360": {
-		"name": "N360",
-		"stats": []
+		"name": "Titan's Determination",
+		"stats": ["25% increased Stun Threshold" ,"Regenerate 1,5% of Life per second while moving"]
 	},
 	"N361": {
 		"name": "Battle-hardened",
