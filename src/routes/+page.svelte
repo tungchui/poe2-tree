@@ -108,7 +108,7 @@
 	<!-- Tooltip displayed when a region is hovered -->
 	{#if tooltipContent != null}
 		<div class="tooltip" style="left: {tooltipX}px; top: {tooltipY}px;">
-			<div class="title" style="background-image: ('$app/tooltip-header.png')">
+			<div class="title" style={`background-image: url('${base}/tooltip-header.png');`}>
 				{tooltipContent.name}
 			</div>
 			<div class="body">
@@ -169,7 +169,6 @@
 			color: #f0e7e5; /* Light gold for the title text */
 			text-align: center;
 			margin-bottom: 15px;
-			background-image: url('./tooltip-header.png'); /* Use the background image */
 			background-size: cover; /* Ensure the image covers the entire title area */
 			background-position: center; /* Center the background image */
 			border-radius: 8px; /* Rounded corners */
