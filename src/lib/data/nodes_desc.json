@@ -873,8 +873,11 @@
 		]
 	},
 	"N176": {
-		"name": "N176",
-		"stats": []
+		"name": "Power of the Dead",
+		"stats": [
+			"Minions deal 15% increased Damage",
+			"Minions have 3% increased Attack and Cast Speed"
+		]
 	},
 	"N177": {
 		"name": "N177",
@@ -1076,8 +1079,11 @@
 		"stats": []
 	},
 	"N222": {
-		"name": "N222",
-		"stats": []
+		"name": "Flow State",
+		"stats": [
+			"15% increased Mana Regeneration Rate",
+			"5% increased Attack and Cast Speed"			
+		]
 	},
 	"N223": {
 		"name": "N223",
@@ -1174,8 +1180,11 @@
 		"stats": []
 	},
 	"N245": {
-		"name": "N245",
-		"stats": []
+		"name": "Flow Like Water",
+		"stats": [
+			"8% increased Attack and Cast Speed",
+			"+5 to Dexterity and Intelligence"
+		]
 	},
 	"N246": {
 		"name": "Primal Growth",
