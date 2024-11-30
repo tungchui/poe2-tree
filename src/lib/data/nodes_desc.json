@@ -1810,8 +1810,8 @@
 		"stats": []
 	},
 	"N391": {
-		"name": "N391",
-		"stats": []
+		"name": "Singular Purpose",
+		"stats": ["5% reduced Attack Speed" ,"20% increased Stun Buildup" ,"40% increased Damage with Two Handed Weapons"]
 	},
 	"N392": {
 		"name": "N392",
